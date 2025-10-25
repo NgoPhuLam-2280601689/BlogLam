@@ -37,7 +37,10 @@ jobs:
         with:
           hugo-version: 'latest' # Dùng phiên bản Hugo mới nhất
           extended: true         # Bắt buộc: Cài bản extended (để chạy SASS)
-
+# --- Thêm khối này vào ---
+      - name: Install Dart Sass
+        run: sudo snap install sass
+        
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
