@@ -37,17 +37,11 @@ jobs:
         with:
           hugo-version: 'latest' # Dùng phiên bản Hugo mới nhất
           extended: true         # Bắt buộc: Cài bản extended (để chạy SASS)
-# --- THÊM 3 KHỐI NÀY VÀO ---
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+# --- THÊM KHỐI NÀY VÀO ---
+      - name: Setup Dart Sass
+        uses: sero-ag/setup-dart-sass@v2
         with:
-          node-version: '20' # Cài Node.js
-
-      - name: Install Dart Sass (via npm)
-        run: npm install -g sass # Cài Sass (không sudo)
-
-      - name: Add npm global bin to PATH
-        run: echo "$(npm config get prefix)/bin" >> $GITHUB_PATH
+          version: 'latest' # Tải phiên bản Sass mới nhất
       # --- KẾT THÚC KHỐI MỚI ---
 
       - name: Setup Pages
