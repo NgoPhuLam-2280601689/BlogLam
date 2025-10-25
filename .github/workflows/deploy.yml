@@ -39,9 +39,7 @@ jobs:
           extended: true         # Bắt buộc: Cài bản extended (để chạy SASS)
 # --- THÊM KHỐI NÀY VÀO ---
       - name: Setup Dart Sass
-        uses: ppaulih/setup-dart-sass@v1
-        with:
-          version: 'latest' # Tải phiên bản Sass mới nhất
+        uses: dart-sass/setup-dart-sass@v1
       # --- KẾT THÚC KHỐI MỚI ---
 
       - name: Setup Pages
