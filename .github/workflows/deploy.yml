@@ -1,73 +1,65 @@
-# Tên của quy trình tự động
 name: Deploy Hugo site to Pages
 
-# Kích hoạt quy trình khi bạn 'push' code lên nhánh 'main'
 on:
   push:
     branches:
-      - main  # Hoặc 'master' tùy vào nhánh chính của bạn
-
-  # Cho phép bạn chạy quy trình này thủ công từ tab Actions
+      - main
   workflow_dispatch:
 
-# Cấp quyền cho quy trình
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Cài đặt concurrency để không bị deploy chồng chéo
 concurrency:
   group: "pages"
   cancel-in-progress: false
 
-# Các bước thực hiện
 jobs:
-  # Bước 1: Build trang web
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          submodules: recursive  # Rất quan trọng: Tải cả theme (submodule)
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: 'latest' # Dùng phiên bản Hugo mới nhất
-          extended: true         # Bắt buộc: Cài bản extended (để chạy SASS)
-# --- THAY THẾ TOÀN BỘ KHỐI CŨ BẰNG KHỐI NÀY ---
+          # Gợi ý: pin bản bạn muốn (ví dụ 0.151.0 hoặc 0.152.2)
+          hugo-version: '0.152.2'
+          extended: true
+
+      # Cài Dart Sass không cần sudo, thêm vào PATH của runner
       - name: Download and Install Dart Sass (Manual, No Sudo)
         run: |
-          # Tạo một thư mục bin cá nhân
-          mkdir -p $HOME/bin
+          set -eux
+          mkdir -p "$HOME/bin"
+          curl -fsSL -o /tmp/dart-sass.tgz \
+            https://github.com/sass/dart-sass/releases/download/1.77.8/dart-sass-1.77.8-linux-x64.tar.gz
+          tar -xzf /tmp/dart-sass.tgz -C /tmp
+          cp /tmp/dart-sass/sass "$HOME/bin/sass"
+          chmod +x "$HOME/bin/sass"
+          echo "$HOME/bin" >> "$GITHUB_PATH"
+          sass --version
 
-          # Tải file
-          wget https://github.com/sass/dart-sass/releases/download/1.77.8/dart-sass-1.77.8-linux-x64.tar.gz
-
-          # Giải nén
-          tar -xzf dart-sass-1.77.8-linux-x64.tar.gz
-
-          # Copy file sass vào thư mục bin cá nhân (không sudo)
-          cp dart-sass/sass $HOME/bin/
-
-          # "Fix PATH" - Thêm thư mục bin cá nhân vào PATH
-          echo "$HOME/bin" >> $GITHUB_PATH
-      # --- KẾT THÚC KHỐI MỚI ---
-
+      # Quan trọng: đặt id để dùng outputs.base_url
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
 
+      # Nếu là Project Pages (repo không phải user.github.io), giữ dấu "/" cuối để tạo URL đúng
       - name: Build
-        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+        run: |
+          hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
-  # Bước 2: Deploy trang web
   deploy:
     environment:
       name: github-pages
