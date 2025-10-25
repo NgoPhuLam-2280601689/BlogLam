@@ -2,160 +2,172 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://localhost:1313/BlogLam/about/</loc>
     <lastmod>2025-10-25T18:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-25T18:00:00+07:00</lastmod>
+    <loc>http://localhost:1313/BlogLam/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/api/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/posts/bai-1-lap-trinh-socket-python/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/posts/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/tags/python/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/tags/server/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/tags/socket/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/tags/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/tags/tcp/</loc>
+    <lastmod>2025-10-25T19:00:00+07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/BlogLam/tags/api/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/back-end/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/back-end/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/express/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/express/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/node.js/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/node.js/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-02-tao-api-restful-voi-nodejs/</loc>
     <lastmod>2025-10-25T14:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2025-10-25T14:30:00+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/</loc>
-    <lastmod>2025-10-25T14:30:00+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/c%C3%B4ng-c%E1%BB%A5/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/c%C3%B4ng-c%E1%BB%A5/</loc>
     <lastmod>2025-10-24T09:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/container/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/container/</loc>
     <lastmod>2025-10-24T09:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/devops/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/devops/</loc>
     <lastmod>2025-10-24T09:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/docker/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/docker/</loc>
     <lastmod>2025-10-24T09:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-03-docker-co-ban/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-03-docker-co-ban/</loc>
     <lastmod>2025-10-24T09:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/b%E1%BA%A3o-m%E1%BA%ADt/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/b%E1%BA%A3o-m%E1%BA%ADt/</loc>
     <lastmod>2025-10-23T11:15:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/http/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/http/</loc>
     <lastmod>2025-10-23T11:15:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/https/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/https/</loc>
     <lastmod>2025-10-23T11:15:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</loc>
     <lastmod>2025-10-23T11:15:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/</loc>
     <lastmod>2025-10-23T11:15:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-04-hieu-ve-http-va-https/</loc>
     <lastmod>2025-10-23T11:15:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/</loc>
-    <lastmod>2025-10-23T11:15:00+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-01-huong-dan-git-co-ban/</loc>
     <lastmod>2025-10-22T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/git/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/git/</loc>
     <lastmod>2025-10-22T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/github/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/github/</loc>
     <lastmod>2025-10-22T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/</loc>
     <lastmod>2025-10-22T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/version-control/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/version-control/</loc>
     <lastmod>2025-10-22T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/css/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/css/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/flexbox/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/flexbox/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/front-end/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/front-end/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-05-css-flexbox-lam-chu-trang-web/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/layout/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/layout/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/ui/ux/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/ui/ux/</loc>
     <lastmod>2025-10-22T16:45:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/code/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/code/</loc>
     <lastmod>2025-10-21T13:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh/</loc>
     <lastmod>2025-10-21T13:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/python/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/pythonic/</loc>
     <lastmod>2025-10-21T13:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/pythonic/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/tips/</loc>
     <lastmod>2025-10-21T13:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/tips/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-06-python-list-comprehensions/</loc>
     <lastmod>2025-10-21T13:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-06-python-list-comprehensions/</loc>
-    <lastmod>2025-10-21T13:00:00+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</loc>
+    <loc>http://localhost:1313/BlogLam/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</loc>
     <lastmod>2025-10-20T10:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</loc>
     <lastmod>2025-10-20T10:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/data/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/data/</loc>
     <lastmod>2025-10-20T10:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/database/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/database/</loc>
     <lastmod>2025-10-20T10:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/sql/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/sql/</loc>
     <lastmod>2025-10-20T10:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-07-sql-joins-hieu-ve-ket-bang/</loc>
     <lastmod>2025-10-20T10:30:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/javascript/</loc>
     <lastmod>2025-10-18T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-08-viet-api-voi-nodejs/</loc>
     <lastmod>2025-10-18T19:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/dns/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/dns/</loc>
     <lastmod>2025-10-16T10:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/bai-09-dns-la-gi/</loc>
+    <loc>http://localhost:1313/BlogLam/posts/bai-09-dns-la-gi/</loc>
     <lastmod>2025-10-16T10:00:00+07:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/internet/</loc>
+    <loc>http://localhost:1313/BlogLam/tags/internet/</loc>
     <lastmod>2025-10-16T10:00:00+07:00</lastmod>
   </url>
 </urlset>

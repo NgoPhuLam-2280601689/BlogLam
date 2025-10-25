@@ -7,7 +7,6 @@ menu: "main"
 weight: 10
 ---
 
-<img src="/images/hotdog.jpg" alt="Ảnh chân dung của tôi" style="width: 200px; border-radius: 50%;">
 
 ## Xin chào, tôi là Ngô Phú Lâm 👋
 

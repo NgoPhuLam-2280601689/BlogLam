@@ -1,0 +1,520 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/BlogLam/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=BlogLam/livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        Lập trình Socket trong Python [Phần 1]: Xây dựng TCP Server đầu tiên
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Tìm hiểu kiến thức nền tảng về Lập trình Mạng bằng cách xây dựng một máy chủ TCP đơn giản với module &#39;socket&#39; của Python."
+  />
+  
+  
+        <link rel="stylesheet" href="/BlogLam/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/BlogLam/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/BlogLam/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/BlogLam/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/BlogLam/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/BlogLam/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/BlogLam/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/BlogLam/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/BlogLam/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/BlogLam/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/BlogLam/posts/bai-1-lap-trinh-socket-python/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/BlogLam/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/BlogLam/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Lập trình Socket trong Python [Phần 1]: Xây dựng TCP Server đầu tiên">
+  <meta name="twitter:description" content="Tìm hiểu kiến thức nền tảng về Lập trình Mạng bằng cách xây dựng một máy chủ TCP đơn giản với module &#39;socket&#39; của Python.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/BlogLam/posts/bai-1-lap-trinh-socket-python/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="Lập trình Socket trong Python [Phần 1]: Xây dựng TCP Server đầu tiên">
+  <meta property="og:description" content="Tìm hiểu kiến thức nền tảng về Lập trình Mạng bằng cách xây dựng một máy chủ TCP đơn giản với module &#39;socket&#39; của Python.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-25T19:00:00+07:00">
+    <meta property="article:modified_time" content="2025-10-25T19:00:00+07:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Socket">
+    <meta property="article:tag" content="Lập Trình Mạng">
+    <meta property="article:tag" content="TCP">
+    <meta property="article:tag" content="Server">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Lập trình Socket trong Python [Phần 1]: Xây dựng TCP Server đầu tiên",
+        "headline": "Lập trình Socket trong Python [Phần 1]: Xây dựng TCP Server đầu tiên",
+        "alternativeHeadline": "",
+        "description": "
+      Tìm hiểu kiến thức nền tảng về Lập trình Mạng bằng cách xây dựng một máy chủ TCP đơn giản với module \u0027socket\u0027 của Python.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/BlogLam\/posts\/bai-1-lap-trinh-socket-python\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-25T19:00:00.00Z",
+        "datePublished": "2025-10-25T19:00:00.00Z",
+        "dateModified": "2025-10-25T19:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/BlogLam/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/BlogLam\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/BlogLam\/posts\/bai-1-lap-trinh-socket-python\/",
+        "wordCount" : "842",
+        "genre" : [ ],
+        "keywords" : [ 
+      
+      "Python"
+
+    
+      
+        ,
+
+      
+      "Socket"
+
+    
+      
+        ,
+
+      
+      "Lập trình Mạng"
+
+    
+      
+        ,
+
+      
+      "TCP"
+
+    
+      
+        ,
+
+      
+      "Server"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/BlogLam/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/BlogLam"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/BlogLam/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/BlogLam/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/BlogLam/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Lập Trình Socket Trong Python [Phần 1]: Xây Dựng TCP Server Đầu Tiên</h1>
+      
+      <p>Chào các bạn!</p>
+<p>Nếu bạn đang học môn Lập trình Mạng, &ldquo;Socket&rdquo; có lẽ là từ bạn nghe nhiều nhất. Vậy socket là gì?</p>
+<p>Nói một cách đơn giản, <strong>socket là một điểm cuối (endpoint) của một kênh giao tiếp hai chiều</strong>.</p>
+<p>Bạn có thể tưởng tượng nó giống như một &ldquo;cuộc gọi điện thoại&rdquo; 📞. Để hai người nói chuyện được, cả hai đều phải nhấc máy. &ldquo;Cái điện thoại&rdquo; ở mỗi đầu chính là một socket.</p>
+<p>Trong lập trình mạng, socket cho phép một chương trình (ví dụ: trình duyệt của bạn) gửi và nhận dữ liệu từ một chương trình khác (ví dụ: máy chủ web của Google) qua mạng, bất kể chúng đang chạy trên cùng một máy hay ở hai đầu thế giới.</p>
+<p>Trong loạt bài viết này, chúng ta sẽ tìm hiểu cách sử dụng module <code>socket</code> có sẵn của Python để tạo ra các ứng dụng mạng. Bài đầu tiên sẽ tập trung vào việc xây dựng một <strong>TCP Server</strong> đơn giản.</p>
+<h2 id="1-tcp-là-gì-tại-sao-lại-là-tcp">1. TCP là gì? Tại sao lại là TCP?</h2>
+<p>Trước khi viết code, chúng ta cần biết về &ldquo;luật chơi&rdquo;. Khi giao tiếp qua mạng, có hai giao thức (protocol) chính:</p>
+<ol>
+<li>
+<p><strong>TCP (Transmission Control Protocol - Giao thức điều khiển truyền vận):</strong></p>
+<ul>
+<li>Giống như một <strong>cuộc gọi điện thoại</strong>.</li>
+<li><strong>Kết nối (Connection-oriented):</strong> Phải thiết lập kết nối (bắt tay) trước khi truyền dữ liệu.</li>
+<li><strong>Đáng tin cậy (Reliable):</strong> Đảm bảo dữ liệu đến đúng nơi, đúng thứ tự, và không bị mất. Nếu mất, nó sẽ tự động gửi lại.</li>
+<li>Hoàn hảo cho: Truy cập web (HTTP), email (SMTP), truyền file (FTP).</li>
+</ul>
+</li>
+<li>
+<p><strong>UDP (User Datagram Protocol - Giao thức Dữ liệu Người dùng):</strong></p>
+<ul>
+<li>Giống như gửi một <strong>bưu thiếp (postcard)</strong>.</li>
+<li><strong>Không kết nối (Connectionless):</strong> Cứ thế gửi, không cần biết người nhận có sẵn sàng hay không.</li>
+<li><strong>Không đáng tin cậy:</strong> Dữ liệu có thể đến sai thứ tự, bị mất, hoặc lặp lại.</li>
+<li>Hoàn hảo cho: Game online, stream video, gọi VoIP (những ứng dụng ưu tiên tốc độ hơn là sự chính xác tuyệt đối).</li>
+</ul>
+</li>
+</ol>
+<p>Trong bài này, chúng ta sẽ xây dựng một Server <strong>TCP</strong>, vì nó là nền tảng của hầu hết các ứng dụng web mà bạn dùng hàng ngày.</p>
+<h2 id="2-server-làm-những-gì">2. Server làm những gì?</h2>
+<p>Một TCP Server luôn thực hiện 5 bước tuần tự:</p>
+<ol>
+<li><strong>Create (Tạo):</strong> Tạo ra một socket.</li>
+<li><strong>Bind (Gắn):</strong> Gắn socket đó với một địa chỉ IP và một cổng (port) cụ thể trên máy tính. Giống như &ldquo;đăng ký&rdquo; một số điện thoại cho cái điện thoại của bạn.</li>
+<li><strong>Listen (Lắng nghe):</strong> Bật máy và chờ kết nối đến.</li>
+<li><strong>Accept (Chấp nhận):</strong> Khi có client kết nối (gọi đến), server chấp nhận cuộc gọi.</li>
+<li><strong>Communicate (Giao tiếp):</strong> Nhận và gửi dữ liệu với client.</li>
+</ol>
+<p>Hãy biến 5 bước này thành code!</p>
+<h2 id="3-viết-code-cho-tcp-server">3. Viết code cho TCP Server</h2>
+<p>Chúng ta sẽ tạo một &ldquo;Echo Server&rdquo;. Đây là một server rất cơ bản: bất cứ thứ gì client gửi đến, server sẽ gửi trả lại (echo) y hệt.</p>
+<p>Tạo một file mới tên là <code>server.py</code> và gõ vào nội dung sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> socket
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 1. Định nghĩa địa chỉ và cổng</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># HOST là địa chỉ IP của máy chủ. </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;127.0.0.1&#39; là địa chỉ đặc biệt (localhost), nghĩa là &#34;chính máy này&#34;.</span>
+</span></span><span style="display:flex;"><span>HOST <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;127.0.0.1&#39;</span>  
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># PORT là số cổng mà server sẽ lắng nghe.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Chúng ta chọn một số lớn hơn 1023 (vì các cổng nhỏ hơn thường được</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dành riêng cho hệ thống).</span>
+</span></span><span style="display:flex;"><span>PORT <span style="color:#f92672">=</span> <span style="color:#ae81ff">65432</span>        
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;--- Server đang khởi động ---&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 2. Tạo và cấu hình Socket</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;with&#39; statement sẽ tự động đóng socket khi khối lệnh kết thúc</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> socket<span style="color:#f92672">.</span>socket(socket<span style="color:#f92672">.</span>AF_INET, socket<span style="color:#f92672">.</span>SOCK_STREAM) <span style="color:#66d9ef">as</span> s:
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># socket.AF_INET:     Chỉ định rằng chúng ta đang dùng IPv4.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># socket.SOCK_STREAM: Chỉ định rằng chúng ta đang dùng TCP.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 3. Bind (Gắn) socket vào địa chỉ và cổng</span>
+</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">.</span>bind((HOST, PORT))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 4. Listen (Lắng nghe) kết nối</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Server bắt đầu lắng nghe kết nối đến</span>
+</span></span><span style="display:flex;"><span>    s<span style="color:#f92672">.</span>listen()
+</span></span><span style="display:flex;"><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Server đang lắng nghe tại </span><span style="color:#e6db74">{</span>HOST<span style="color:#e6db74">}</span><span style="color:#e6db74">:</span><span style="color:#e6db74">{</span>PORT<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 5. Accept (Chấp nhận) kết nối</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Lệnh accept() sẽ &#34;dừng&#34; (block) chương trình</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># cho đến khi có một client kết nối.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Khi có client kết nối, nó trả về 2 thứ:</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># - conn: Một đối tượng socket MỚI, dùng để giao tiếp với client.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># - addr: Thông tin (IP, Port) của client vừa kết nối.</span>
+</span></span><span style="display:flex;"><span>    conn, addr <span style="color:#f92672">=</span> s<span style="color:#f92672">.</span>accept()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Chúng ta lại dùng &#39;with&#39; cho socket mới (conn)</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">with</span> conn:
+</span></span><span style="display:flex;"><span>        print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Đã kết nối bởi </span><span style="color:#e6db74">{</span>addr<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># 6. Giao tiếp (Nhận và Gửi dữ liệu)</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span> <span style="color:#66d9ef">True</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Nhận dữ liệu từ client</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># 1024 là kích thước bộ đệm (buffer size)</span>
+</span></span><span style="display:flex;"><span>            data <span style="color:#f92672">=</span> conn<span style="color:#f92672">.</span>recv(<span style="color:#ae81ff">1024</span>)
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Nếu không nhận được dữ liệu (data rỗng)</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># nghĩa là client đã ngắt kết nối.</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> data:
+</span></span><span style="display:flex;"><span>                print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Client </span><span style="color:#e6db74">{</span>addr<span style="color:#e6db74">}</span><span style="color:#e6db74"> đã ngắt kết nối.&#34;</span>)
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">break</span> <span style="color:#75715e"># Thoát khỏi vòng lặp</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Nhận từ Client: </span><span style="color:#e6db74">{</span>data<span style="color:#f92672">.</span>decode(<span style="color:#e6db74">&#39;utf-8&#39;</span>)<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Gửi trả lại (echo) dữ liệu cho client</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Chúng ta gửi lại chính xác những gì đã nhận</span>
+</span></span><span style="display:flex;"><span>            conn<span style="color:#f92672">.</span>sendall(data)
+</span></span></code></pre></div></div>
+    <div class="post__footer">
+      
+
+      
+        <span><a class="tag" href="/BlogLam/tags/python/">Python</a><a class="tag" href="/BlogLam/tags/socket/">Socket</a><a class="tag" href="/BlogLam/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập trình Mạng</a><a class="tag" href="/BlogLam/tags/tcp/">TCP</a><a class="tag" href="/BlogLam/tags/server/">Server</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/BlogLam/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

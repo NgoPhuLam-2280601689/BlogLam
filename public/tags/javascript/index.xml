@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>JavaScript on Blog của Lâm</title>
-    <link>http://localhost:1313/tags/javascript/</link>
+    <link>http://localhost:1313/BlogLam/tags/javascript/</link>
     <description>Recent content in JavaScript on Blog của Lâm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Sat, 18 Oct 2025 19:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Oct 2025 19:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/BlogLam/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>REST API là gì? Viết API đầu tiên với Node.js và Express</title>
-      <link>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</link>
+      <link>http://localhost:1313/BlogLam/posts/bai-08-viet-api-voi-nodejs/</link>
       <pubDate>Sat, 18 Oct 2025 19:00:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</guid>
+      <guid>http://localhost:1313/BlogLam/posts/bai-08-viet-api-voi-nodejs/</guid>
       
         <description>&lt;p&gt;Nếu bạn là sinh viên CNTT, chắc chắn bạn đã nghe cụm từ &amp;ldquo;API&amp;rdquo; ở khắp mọi nơi. Nhưng nó chính xác là gì? Và tại sao Node.js cùng Express lại là bộ đôi hoàn hảo để tạo ra nó?&lt;/p&gt;
 &lt;h3 id=&#34;api-là-gì-giải-thích-đơn-giản&#34;&gt;API là gì? (Giải thích đơn giản)&lt;/h3&gt;

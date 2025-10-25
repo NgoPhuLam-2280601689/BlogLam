@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Flexbox on Blog của Lâm</title>
-    <link>http://localhost:1313/tags/flexbox/</link>
+    <link>http://localhost:1313/BlogLam/tags/flexbox/</link>
     <description>Recent content in Flexbox on Blog của Lâm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Wed, 22 Oct 2025 16:45:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/flexbox/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Oct 2025 16:45:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/BlogLam/tags/flexbox/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết</title>
-      <link>http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/</link>
+      <link>http://localhost:1313/BlogLam/posts/bai-05-css-flexbox-lam-chu-trang-web/</link>
       <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/</guid>
+      <guid>http://localhost:1313/BlogLam/posts/bai-05-css-flexbox-lam-chu-trang-web/</guid>
       
         <description>Tại sao Flexbox lại là một cuộc cách mạng trong CSS? Hướng dẫn chi tiết các khái niệm quan trọng nhất để bạn làm chủ bố cục trang web.</description>
       

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Blog của Lâm</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>http://localhost:1313/BlogLam/categories/</link>
     <description>Recent content in Categories on Blog của Lâm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Sat, 25 Oct 2025 14:30:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Oct 2025 14:30:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/BlogLam/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lập Trình Back-End</title>
-      <link>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</link>
+      <link>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</link>
       <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</guid>
+      <guid>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</guid>
       
         <description></description>
       
@@ -20,10 +20,10 @@
     
     <item>
       <title>Công Cụ</title>
-      <link>http://localhost:1313/categories/c%C3%B4ng-c%E1%BB%A5/</link>
+      <link>http://localhost:1313/BlogLam/categories/c%C3%B4ng-c%E1%BB%A5/</link>
       <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/categories/c%C3%B4ng-c%E1%BB%A5/</guid>
+      <guid>http://localhost:1313/BlogLam/categories/c%C3%B4ng-c%E1%BB%A5/</guid>
       
         <description></description>
       
@@ -31,10 +31,10 @@
     
     <item>
       <title>Lập Trình Mạng</title>
-      <link>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
+      <link>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
       <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</guid>
+      <guid>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</guid>
       
         <description></description>
       
@@ -42,10 +42,10 @@
     
     <item>
       <title>Lập Trình Front-End</title>
-      <link>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/</link>
+      <link>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/</link>
       <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/</guid>
+      <guid>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/</guid>
       
         <description></description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title>Lập Trình</title>
-      <link>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh/</link>
+      <link>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh/</link>
       <pubDate>Tue, 21 Oct 2025 13:00:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh/</guid>
+      <guid>http://localhost:1313/BlogLam/categories/l%E1%BA%ADp-tr%C3%ACnh/</guid>
       
         <description></description>
       
@@ -64,10 +64,10 @@
     
     <item>
       <title>Cơ Sở Dữ Liệu</title>
-      <link>http://localhost:1313/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</link>
+      <link>http://localhost:1313/BlogLam/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</link>
       <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</guid>
+      <guid>http://localhost:1313/BlogLam/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</guid>
       
         <description></description>
       

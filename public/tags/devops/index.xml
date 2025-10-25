@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>DevOps on Blog của Lâm</title>
-    <link>http://localhost:1313/tags/devops/</link>
+    <link>http://localhost:1313/BlogLam/tags/devops/</link>
     <description>Recent content in DevOps on Blog của Lâm</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>vi-vn</language>
-    <lastBuildDate>Fri, 24 Oct 2025 09:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Oct 2025 09:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/BlogLam/tags/devops/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Giải quyết nỗi lo &#39;Nó chạy trên máy em!&#39;</title>
-      <link>http://localhost:1313/posts/bai-03-docker-co-ban/</link>
+      <link>http://localhost:1313/BlogLam/posts/bai-03-docker-co-ban/</link>
       <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
       
-      <guid>http://localhost:1313/posts/bai-03-docker-co-ban/</guid>
+      <guid>http://localhost:1313/BlogLam/posts/bai-03-docker-co-ban/</guid>
       
         <description>Docker là gì? Tại sao nó lại &#39;hot&#39; đến vậy? Hướng dẫn &#39;dockerize&#39; một ứng dụng Node.js cho người mới bắt đầu.</description>
       
