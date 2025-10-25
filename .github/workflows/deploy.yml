@@ -31,22 +31,31 @@ jobs:
           # Gợi ý: pin bản bạn muốn (ví dụ 0.151.0 hoặc 0.152.2)
           hugo-version: '0.152.2'
           extended: true
-
-      - name: Download and Install Dart Sass (Manual, No Sudo)
+          
+      - name: Install Dart Sass (binary, keep folder structure)
         run: |
           set -eux
-          mkdir -p "$HOME/bin"
+          SASS_VER=1.77.8
           curl -fsSL -o /tmp/dart-sass.tgz \
-            https://github.com/sass/dart-sass/releases/download/1.77.8/dart-sass-1.77.8-linux-x64.tar.gz
-          tar -xzf /tmp/dart-sass.tgz -C /tmp
-          cp /tmp/dart-sass/sass "$HOME/bin/sass"
-          chmod +x "$HOME/bin/sass"
+            "https://github.com/sass/dart-sass/releases/download/${SASS_VER}/dart-sass-${SASS_VER}-linux-x64.tar.gz"
+          # Giải nén thẳng vào $HOME (sẽ có $HOME/dart-sass/...)
+          tar -xzf /tmp/dart-sass.tgz -C "$HOME"
+          # Dọn các cài cũ có thể che PATH
+          rm -f "$HOME/bin/sass" || true
+          mkdir -p "$HOME/bin"
+          # Tạo symlink tới script 'sass' trong thư mục vừa giải nén
+          ln -s "$HOME/dart-sass/sass" "$HOME/bin/sass"
+          # Đảm bảo quyền thực thi (thường tar đã giữ)
+          chmod +x "$HOME/dart-sass/sass" "$HOME/dart-sass/src/dart"
+          # Thêm PATH cho các step KẾ TIẾP
           echo "$HOME/bin" >> "$GITHUB_PATH"
 
       - name: Verify Dart Sass
         run: |
+          export PATH="$HOME/bin:$PATH"    # dùng ngay trong step hiện tại
           command -v sass
           sass --version
+
 
 
       # Quan trọng: đặt id để dùng outputs.base_url
