@@ -44,7 +44,7 @@ jobs:
           node-version: '20' # Cài Node.js 
 
       - name: Install Dart Sass (via npm)
-        run: sudo npm install -g sass # Cài Sass bằng npm
+        run: npm install -g sass # Cài Sass bằng npm
       # --- KẾT THÚC KHỐI MỚI ---
 
       - name: Setup Pages
