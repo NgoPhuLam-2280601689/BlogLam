@@ -38,8 +38,17 @@ jobs:
           hugo-version: 'latest' # Dùng phiên bản Hugo mới nhất
           extended: true         # Bắt buộc: Cài bản extended (để chạy SASS)
 # --- THÊM KHỐI NÀY VÀO ---
-      - name: Setup Dart Sass
-        uses: dart-sass/setup-dart-sass@v1
+      - name: Download and Install Dart Sass (Manual)
+        run: |
+          # Tải file từ GitHub
+          wget https://github.com/sass/dart-sass/releases/download/1.77.6/dart-sass-1.77.6-linux-x64.tar.gz
+
+          # Giải nén file
+          tar -xzf dart-sass-1.77.6-linux-x64.tar.gz
+
+          # Copy file 'sass' vào một thư mục đã có trong PATH
+          # Đây chính là bước "fix PATH" mà bạn nói
+          sudo cp dart-sass/sass /usr/local/bin/
       # --- KẾT THÚC KHỐI MỚI ---
 
       - name: Setup Pages
