@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog của Lâm</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Sat, 25 Oct 2025 18:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giới thiệu</title>
+      <link>http://localhost:1313/about/</link>
+      <pubDate>Sat, 25 Oct 2025 18:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/about/</guid>
+      
+        <description>&lt;img src=&#34;http://localhost:1313/images/hotdog.jpg&#34; alt=&#34;Ảnh chân dung của tôi&#34; style=&#34;width: 200px; border-radius: 50%;&#34;&gt;
+&lt;h2 id=&#34;xin-chào-tôi-là-ngô-phú-lâm-&#34;&gt;Xin chào, tôi là Ngô Phú Lâm 👋&lt;/h2&gt;
+&lt;p&gt;Tôi là sinh viên năm 4 ngành Công Nghệ Thông Tin tại Hutech University, đang thực hiện đồ án tốt nghiệp cho môn Lập trình mạng.&lt;/p&gt;
+&lt;p&gt;Tôi có đam mê xây dựng các ứng dụng web hiệu quả, có khả năng mở rộng và giải quyết các vấn đề thực tế. Blog này là nơi tôi ghi lại hành trình học tập và chia sẻ các kiến thức về code mà tôi tích lũy được.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Tạo API RESTful đơn giản với Node.js và Express</title>
+      <link>http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/</link>
+      <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/</guid>
+      
+        <description>Hướng dẫn chi tiết cách xây dựng một API CRUD (Tạo, Đọc) cơ bản bằng Node.js và Express.js cho người mới bắt đầu.</description>
+      
+    </item>
+    
+    <item>
+      <title>Giải quyết nỗi lo &#39;Nó chạy trên máy em!&#39;</title>
+      <link>http://localhost:1313/posts/bai-03-docker-co-ban/</link>
+      <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-03-docker-co-ban/</guid>
+      
+        <description>Docker là gì? Tại sao nó lại &#39;hot&#39; đến vậy? Hướng dẫn &#39;dockerize&#39; một ứng dụng Node.js cho người mới bắt đầu.</description>
+      
+    </item>
+    
+    <item>
+      <title>Tại sao có trang web là &#39;ổ khóa&#39;, có trang lại &#39;Không bảo mật&#39;?</title>
+      <link>http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/</guid>
+      
+        <description>Giải thích đơn giản HTTP là gì, HTTPS là gì, và tại sao chữ &#39;S&#39; (Secure) lại là một trong những thứ quan trọng nhất trên Internet hiện đại.</description>
+      
+    </item>
+    
+    <item>
+      <title>Các lệnh Git cơ bản sinh viên CNTT phải biết</title>
+      <link>http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/</link>
+      <pubDate>Wed, 22 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/</guid>
+      
+        <description>Đừng code chay nữa! Hiểu rõ Git là gì và học cách dùng các lệnh cơ bản (commit, push, pull, branch) để quản lý code như một lập trình viên chuyên nghiệp.</description>
+      
+    </item>
+    
+    <item>
+      <title>Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết</title>
+      <link>http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/</link>
+      <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/</guid>
+      
+        <description>Tại sao Flexbox lại là một cuộc cách mạng trong CSS? Hướng dẫn chi tiết các khái niệm quan trọng nhất để bạn làm chủ bố cục trang web.</description>
+      
+    </item>
+    
+    <item>
+      <title>Viết code Python ngắn gọn hơn với List Comprehensions</title>
+      <link>http://localhost:1313/posts/bai-06-python-list-comprehensions/</link>
+      <pubDate>Tue, 21 Oct 2025 13:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-06-python-list-comprehensions/</guid>
+      
+        <description>List Comprehension là gì? Hướng dẫn cách viết code Python &#39;đẹp&#39; và hiệu quả hơn bằng cú pháp đặc biệt này.</description>
+      
+    </item>
+    
+    <item>
+      <title>SQL JOINs: Nghệ thuật &#39;Ghép&#39; dữ liệu từ nhiều bảng</title>
+      <link>http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/</link>
+      <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/</guid>
+      
+        <description>SQL JOIN là gì? Giải thích đơn giản và trực quan về INNER JOIN, LEFT JOIN, và tại sao nó là kỹ năng bắt buộc khi làm việc với cơ sở dữ liệu.</description>
+      
+    </item>
+    
+    <item>
+      <title>REST API là gì? Viết API đầu tiên với Node.js và Express</title>
+      <link>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</link>
+      <pubDate>Sat, 18 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</guid>
+      
+        <description>&lt;p&gt;Nếu bạn là sinh viên CNTT, chắc chắn bạn đã nghe cụm từ &amp;ldquo;API&amp;rdquo; ở khắp mọi nơi. Nhưng nó chính xác là gì? Và tại sao Node.js cùng Express lại là bộ đôi hoàn hảo để tạo ra nó?&lt;/p&gt;
+&lt;h3 id=&#34;api-là-gì-giải-thích-đơn-giản&#34;&gt;API là gì? (Giải thích đơn giản)&lt;/h3&gt;
+&lt;p&gt;Hãy tưởng tượng bạn đang ở trong một nhà hàng.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bạn (Client) là &lt;strong&gt;người dùng&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Nhà bếp (Server) là &lt;strong&gt;máy chủ&lt;/strong&gt; chứa dữ liệu.&lt;/li&gt;
+&lt;li&gt;Cuốn menu (API) là &lt;strong&gt;API&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bạn không thể tự ý xông vào bếp (server) để lấy đồ ăn (dữ liệu). Thay vào đó, bạn dùng &lt;strong&gt;cuốn menu (API)&lt;/strong&gt; để đưa ra một yêu cầu rõ ràng (ví dụ: &amp;ldquo;Cho tôi món Phở&amp;rdquo;). Người phục vụ sẽ nhận yêu cầu, đưa vào bếp, và mang món ăn (dữ liệu) ra cho bạn.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>DNS là gì? &#39;Danh bạ điện thoại&#39; của Internet hoạt động như thế nào?</title>
+      <link>http://localhost:1313/posts/bai-09-dns-la-gi/</link>
+      <pubDate>Thu, 16 Oct 2025 10:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-09-dns-la-gi/</guid>
+      
+        <description>Giải thích đơn giản DNS là gì, tại sao chúng ta gõ được google.com thay vì một dãy số IP khó nhớ, và quy trình phân giải tên miền.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

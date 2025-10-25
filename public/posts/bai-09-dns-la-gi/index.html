@@ -1,0 +1,472 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        DNS là gì? &#39;Danh bạ điện thoại&#39; của Internet hoạt động như thế nào?
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Giải thích đơn giản DNS là gì, tại sao chúng ta gõ được google.com thay vì một dãy số IP khó nhớ, và quy trình phân giải tên miền."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-09-dns-la-gi/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="DNS là gì? &#39;Danh bạ điện thoại&#39; của Internet hoạt động như thế nào?">
+  <meta name="twitter:description" content="Giải thích đơn giản DNS là gì, tại sao chúng ta gõ được google.com thay vì một dãy số IP khó nhớ, và quy trình phân giải tên miền.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-09-dns-la-gi/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="DNS là gì? &#39;Danh bạ điện thoại&#39; của Internet hoạt động như thế nào?">
+  <meta property="og:description" content="Giải thích đơn giản DNS là gì, tại sao chúng ta gõ được google.com thay vì một dãy số IP khó nhớ, và quy trình phân giải tên miền.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-16T10:00:00+07:00">
+    <meta property="article:modified_time" content="2025-10-16T10:00:00+07:00">
+    <meta property="article:tag" content="DNS">
+    <meta property="article:tag" content="Mạng Máy Tính">
+    <meta property="article:tag" content="Internet">
+    <meta property="article:tag" content="Lập Trình Mạng">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "DNS là gì? \u0027Danh bạ điện thoại\u0027 của Internet hoạt động như thế nào?",
+        "headline": "DNS là gì? \u0027Danh bạ điện thoại\u0027 của Internet hoạt động như thế nào?",
+        "alternativeHeadline": "",
+        "description": "
+      Giải thích đơn giản DNS là gì, tại sao chúng ta gõ được google.com thay vì một dãy số IP khó nhớ, và quy trình phân giải tên miền.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-09-dns-la-gi\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-16T10:00:00.00Z",
+        "datePublished": "2025-10-16T10:00:00.00Z",
+        "dateModified": "2025-10-16T10:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-09-dns-la-gi\/",
+        "wordCount" : "772",
+        "genre" : [ 
+      
+      "Lập trình mạng"
+
+    ],
+        "keywords" : [ 
+      
+      "DNS"
+
+    
+      
+        ,
+
+      
+      "Mạng máy tính"
+
+    
+      
+        ,
+
+      
+      "Internet"
+
+    
+      
+        ,
+
+      
+      "Lập trình mạng"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>DNS Là Gì? &#39;Danh Bạ Điện Thoại&#39; Của Internet Hoạt Động Như Thế Nào?</h1>
+      
+      <p>Bạn đã bao giờ tự hỏi làm thế nào mà khi bạn gõ <code>google.com</code> vào trình duyệt, máy tính của bạn lại &ldquo;biết đường&rdquo; để kết nối đến máy chủ của Google, vốn chỉ là một dãy số?</p>
+<p>Chào mừng bạn đến với <strong>DNS (Domain Name System)</strong> - một trong những hệ thống &ldquo;anh hùng thầm lặng&rdquo; quan trọng nhất giúp Internet hoạt động.</p>
+<h3 id="danh-bạ-điện-thoại-khổng-lồ">&ldquo;Danh bạ Điện thoại&rdquo; khổng lồ</h3>
+<p>Cách giải thích đơn giản và kinh điển nhất: <strong>DNS chính là &ldquo;Danh bạ Điện thoại&rdquo; của Internet.</strong></p>
+<p>Hãy nghĩ xem:</p>
+<ul>
+<li>Bộ não con người chúng ta rất giỏi nhớ <strong>Tên</strong> (ví dụ: <code>google.com</code>, <code>facebook.com</code>).</li>
+<li>Máy tính và các thiết bị mạng chỉ &ldquo;nói chuyện&rdquo; với nhau bằng <strong>Số</strong> (địa chỉ IP, ví dụ: <code>142.250.204.142</code>).</li>
+</ul>
+<p>Sẽ thật là thảm họa nếu mỗi lần muốn vào Google, bạn phải nhớ và gõ <code>142.250.204.142</code>.</p>
+<p>Hệ thống DNS ra đời để làm một nhiệm vụ duy nhất: <strong>Dịch</strong> tên miền (Domain Name) mà con người hiểu, thành địa chỉ IP (IP Address) mà máy tính hiểu.</p>
+<h3 id="hành-trình-của-một-truy-vấn-dns-siêu-đơn-giản">Hành trình của một truy vấn DNS (Siêu đơn giản)</h3>
+<p>Khi bạn gõ <code>google.com</code> và nhấn Enter, một loạt các hành động &ldquo;vô hình&rdquo; xảy ra trong chưa đầy một giây. Dưới đây là phiên bản đơn giản hóa của hành trình đó:</p>
+<p><strong>1. Bạn hỏi:</strong> Bạn gõ <code>google.com</code>. Trình duyệt của bạn hỏi hệ điều hành (Windows/macOS): &ldquo;Này, IP của <code>google.com</code> là gì?&rdquo;</p>
+<p><strong>2. Máy tính tự kiểm tra (Cache):</strong> Máy tính của bạn rất &ldquo;lười&rdquo;. Nó sẽ kiểm tra &ldquo;bộ nhớ&rdquo; (cache) của chính nó trước: &ldquo;Mình đã từng hỏi địa chỉ này gần đây chưa? À, chưa có.&rdquo;</p>
+<p><strong>3. Hỏi &ldquo;Tổng đài&rdquo; gần nhất (Recursive Resolver):</strong> Máy tính của bạn gửi yêu cầu đến một máy chủ DNS đặc biệt, gọi là <strong>Recursive Resolver</strong>. Đây thường là &ldquo;tổng đài&rdquo; do nhà mạng (ISP) của bạn cung cấp (ví dụ: DNS của FPT, Viettel) hoặc một dịch vụ công cộng (như <code>8.8.8.8</code> của Google).</p>
+<blockquote>
+<p><strong>Bạn:</strong> &ldquo;Tổng đài 8.8.8.8 ơi, IP của <code>google.com</code> là gì?&rdquo;</p>
+</blockquote>
+<p><strong>4. Tổng đài đi hỏi (Query):</strong> &ldquo;Tổng đài&rdquo; (Resolver) này cũng không biết hết mọi số điện thoại trên thế giới. Nó bắt đầu hành trình đi hỏi:</p>
+<ul>
+<li>
+<p><strong>Hỏi Root Server (Máy chủ Gốc  &lsquo;.&rsquo;):</strong> &ldquo;Này sếp Gốc, ông có biết <code>google.com</code> ở đâu không?&rdquo;</p>
+<blockquote>
+<p><strong>Root Server:</strong> &ldquo;Không biết. Nhưng tôi biết ai quản lý tất cả các tên miền <code>.com</code>. Cậu đi hỏi cái máy chủ <code>.com</code> TLD ấy.&rdquo; (TLD = Top-Level Domain)</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Hỏi <code>.com</code> TLD Server (Máy chủ <code>.com</code>):</strong> &ldquo;Này sếp <code>.com</code>, ông có biết <code>google.com</code> ở đâu không?&rdquo;</p>
+<blockquote>
+<p><strong>TLD Server:</strong> &ldquo;Không biết. Nhưng <code>google.com</code> là tên miền do Google tự quản lý. Cậu đi hỏi máy chủ DNS <em>chính thức</em> của Google (Authoritative Name Server) ấy.&rdquo;</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Hỏi Authoritative Name Server (Máy chủ Chính thức của Google):</strong> &ldquo;Này sếp Google, IP của <code>google.com</code> là gì?&rdquo;</p>
+<blockquote>
+<p><strong>Authoritative Server:</strong> &ldquo;À, nó đây! IP của <code>google.com</code> là <code>142.250.204.142</code>. Cầm lấy!&rdquo;</p>
+</blockquote>
+</li>
+</ul>
+<p><strong>5. &ldquo;Tổng đài&rdquo; trả lời bạn:</strong> &ldquo;Tổng đài&rdquo; (Resolver) nhận được câu trả lời <code>142.250.204.142</code>. Nó lập tức <strong>ghi nhớ (cache)</strong> lại câu trả lời này (để lần sau ai hỏi <code>google.com</code> nó trả lời luôn không cần đi hỏi lại). Sau đó, nó gửi câu trả lời này về cho máy tính của bạn.</p>
+<p><strong>6. Kết nối!</strong> Máy tính của bạn nhận được IP. Trình duyệt của bạn reo lên: &ldquo;Aha! <code>142.250.204.142</code>!&rdquo;. Lúc này, trình duyệt mới thực sự bắt đầu gửi một yêu cầu <strong>HTTP/HTTPS</strong> đến địa chỉ IP đó, và trang web Google bắt đầu tải.</p>
+<h3 id="tại-sao-lại-phức-tạp-như-vậy">Tại sao lại phức tạp như vậy?</h3>
+<p>Toàn bộ quá trình hỏi-đáp trên có vẻ cồng kềnh, nhưng nó là một thiết kế thiên tài:</p>
+<ul>
+<li><strong>Phân tán (Distributed):</strong> Không một máy chủ nào chứa toàn bộ &ldquo;danh bạ&rdquo; Internet. Nếu máy chủ đó sập, cả Internet sập. Thay vào đó, trách nhiệm được chia nhỏ cho hàng triệu máy chủ trên toàn thế giới.</li>
+<li><strong>Phân cấp (Hierarchical):</strong> Hệ thống được tổ chức theo hình cây (Gốc -&gt; <code>.com</code> -&gt; <code>google.com</code>), giúp việc tìm kiếm cực kỳ nhanh chóng và logic.</li>
+<li><strong>Tốc độ (Caching):</strong> Nhờ cơ chế &ldquo;ghi nhớ&rdquo; (cache) ở mọi cấp độ (từ máy tính của bạn, đến router, đến &ldquo;tổng đài&rdquo; ISP), chỉ có lần đầu tiên truy cập là tốn thời gian đi hỏi. Những lần sau đó, câu trả lời được lấy từ cache gần như ngay lập tức.</li>
+</ul>
+<p>Nếu không có DNS, Internet như chúng ta biết sẽ không thể tồn tại. Nó là lớp keo vô hình kết dính những cái tên thân thiện với con người và những con số phức tạp của máy móc lại với nhau.</p>
+</div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập trình mạng</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/dns/">DNS</a><a class="tag" href="/tags/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng máy tính</a><a class="tag" href="/tags/internet/">Internet</a><a class="tag" href="/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập trình mạng</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SQL on Blog của Lâm</title>
+    <link>http://localhost:1313/tags/sql/</link>
+    <description>Recent content in SQL on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Mon, 20 Oct 2025 10:30:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL JOINs: Nghệ thuật &#39;Ghép&#39; dữ liệu từ nhiều bảng</title>
+      <link>http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/</link>
+      <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/</guid>
+      
+        <description>SQL JOIN là gì? Giải thích đơn giản và trực quan về INNER JOIN, LEFT JOIN, và tại sao nó là kỹ năng bắt buộc khi làm việc với cơ sở dữ liệu.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

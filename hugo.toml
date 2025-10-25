@@ -1,0 +1,41 @@
+baseURL = "https://NgoPhuLam-2280601689.github.io/BlogLam/"
+languageCode = "vi-vn"
+title = "Blog của Lâm"
+theme = 'anatole'
+
+# Cấu hình cho các bài viết sẽ hiển thị trên trang chủ
+mainSections = ["post"]
+
+[params]
+# Thông tin cá nhân hiển thị ở sidebar
+author = "Ngô Phú Lâm"
+description = "Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới."
+profilePicture = "images/oke.jpg"
+keywords = "blog, cá nhân, lập trình, it, cv"
+favicon = "favicons/"
+customCss = []
+customJs = []
+
+# Cấu hình các mạng xã hội (tùy chọn)
+[[params.socialIcons]]
+icon = "fab fa-github"
+title = "GitHub"
+url = "https://github.com/NgoPhuLam-2280601689"
+
+[[params.socialIcons]]
+icon = "fas fa-envelope"
+title = "Email"
+url = "https://mail.google.com/mail/u/0/?pli=1#inbox"
+
+# Cấu hình menu điều hướng
+[[menu.main]]
+name = "Bài Đăng"
+weight = 100
+identifier = "posts"
+url = "/posts/"
+
+# Cho phép sử dụng HTML thô trong file Markdown
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

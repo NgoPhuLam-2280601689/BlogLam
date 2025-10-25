@@ -1,0 +1,499 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        Giải quyết nỗi lo &#39;Nó chạy trên máy em!&#39;
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Docker là gì? Tại sao nó lại &#39;hot&#39; đến vậy? Hướng dẫn &#39;dockerize&#39; một ứng dụng Node.js cho người mới bắt đầu."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-03-docker-co-ban/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Giải quyết nỗi lo &#39;Nó chạy trên máy em!&#39;">
+  <meta name="twitter:description" content="Docker là gì? Tại sao nó lại &#39;hot&#39; đến vậy? Hướng dẫn &#39;dockerize&#39; một ứng dụng Node.js cho người mới bắt đầu.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-03-docker-co-ban/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="Giải quyết nỗi lo &#39;Nó chạy trên máy em!&#39;">
+  <meta property="og:description" content="Docker là gì? Tại sao nó lại &#39;hot&#39; đến vậy? Hướng dẫn &#39;dockerize&#39; một ứng dụng Node.js cho người mới bắt đầu.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-24T09:00:00+07:00">
+    <meta property="article:modified_time" content="2025-10-24T09:00:00+07:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="DevOps">
+    <meta property="article:tag" content="Container">
+    <meta property="article:tag" content="Node.js">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Giải quyết nỗi lo \u0027Nó chạy trên máy em!\u0027",
+        "headline": "Giải quyết nỗi lo \u0027Nó chạy trên máy em!\u0027",
+        "alternativeHeadline": "",
+        "description": "
+      Docker là gì? Tại sao nó lại \u0027hot\u0027 đến vậy? Hướng dẫn \u0027dockerize\u0027 một ứng dụng Node.js cho người mới bắt đầu.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-03-docker-co-ban\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-24T09:00:00.00Z",
+        "datePublished": "2025-10-24T09:00:00.00Z",
+        "dateModified": "2025-10-24T09:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-03-docker-co-ban\/",
+        "wordCount" : "874",
+        "genre" : [ 
+      
+      "Công cụ"
+
+    ],
+        "keywords" : [ 
+      
+      "Docker"
+
+    
+      
+        ,
+
+      
+      "DevOps"
+
+    
+      
+        ,
+
+      
+      "Container"
+
+    
+      
+        ,
+
+      
+      "Node.js"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Giải Quyết Nỗi Lo &#39;Nó Chạy Trên Máy Em!&#39;</h1>
+      
+      <p>Chắc chắn bạn đã từng (hoặc sẽ) gặp tình huống: &ldquo;Ủa, sao code chạy trên máy em ngon lành mà lên máy thầy/máy chủ/máy bạn lại lỗi?&rdquo;</p>
+<p>Vấn đề đó xảy ra là do sự khác biệt về môi trường: phiên bản Node.js khác nhau, thư viện hệ thống bị thiếu, hoặc một biến môi trường nào đó không được cài đặt.</p>
+<p><strong>Docker</strong> ra đời để giải quyết triệt để vấn đề này.</p>
+<h3 id="docker-là-gì-giải-thích-đơn-giản">Docker là gì? (Giải thích đơn giản)</h3>
+<p>Hãy tưởng tượng bạn muốn vận chuyển một món đồ quý giá.</p>
+<ul>
+<li><strong>Cách cũ (Máy ảo - VM):</strong> Bạn thuê nguyên một chiếc xe tải (một hệ điều hành ảo hoàn chỉnh), dù món đồ rất nhỏ. Rất nặng nề và lãng phí tài nguyên.</li>
+<li><strong>Cách mới (Docker):</strong> Bạn đóng gói món đồ và <em>tất cả những thứ nó cần</em> (như xốp, lót, v.v.) vào một <strong>&ldquo;container&rdquo;</strong> (thùng chứa) tiêu chuẩn. Sau đó, bạn có thể chở cái thùng này trên bất kỳ xe tải, tàu hỏa, hay tàu thủy nào (bất kỳ máy nào có cài Docker).</li>
+</ul>
+<p>Docker &ldquo;đóng gói&rdquo; ứng dụng của bạn (code) cùng với <em>mọi thứ nó cần để chạy</em> (như thư viện, runtime, file cấu hình) vào một &ldquo;image&rdquo; (ảnh). &ldquo;Image&rdquo; này khi được chạy sẽ tạo ra một &ldquo;container&rdquo; biệt lập.</p>
+<p>Nó đảm bảo rằng ứng dụng của bạn sẽ chạy <strong>đồng nhất</strong> ở mọi nơi.</p>
+<h3 id="bước-1-viết-dockerfile-bản-thiết-kế">Bước 1: Viết <code>Dockerfile</code> (Bản thiết kế)</h3>
+<p><code>Dockerfile</code> là một file văn bản không có đuôi file, chứa các hướng dẫn từng bước để Docker &ldquo;đóng gói&rdquo; (build) image cho bạn.</p>
+<p>Giả sử bạn đã có ứng dụng Node.js (với file <code>server.js</code> và <code>package.json</code>) từ bài viết trước. Hãy tạo một file mới tên là <code>Dockerfile</code> (viết hoa chữ D, không đuôi) ngay bên cạnh <code>server.js</code>.</p>
+<p>Dán nội dung sau vào file <code>Dockerfile</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-dockerfile" data-lang="dockerfile"><span style="display:flex;"><span><span style="color:#75715e"># --- Giai đoạn 1: CHỌN NỀN MÓNG ---</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Bắt đầu từ một image (hình ảnh) có sẵn Node.js 18</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &#39;alpine&#39; là một phiên bản Linux siêu nhẹ, giúp image cuối cùng</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># của chúng ta nhỏ gọn hơn.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">FROM</span> <span style="color:#e6db74">node:18-alpine</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># --- Giai đoạn 2: THIẾT LẬP MÔI TRƯỜNG ---</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Tạo và đặt thư mục làm việc (Working Directory)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># bên trong container.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Giống như tạo thư mục &#39;app&#39; và &#39;cd&#39; vào đó.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">WORKDIR</span> <span style="color:#e6db74">/usr/src/app</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># --- Giai đoạn 3: CÀI ĐẶT DEPENDENCY ---</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Đây là một mẹo tối ưu hóa tốc độ build!</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 1. Chỉ copy file package.json và package-lock.json</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> package*.json ./<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># 2. Chạy npm install</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Docker sẽ &#34;cache&#34; (lưu) lớp này.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Lần sau, nếu 2 file package*.json không đổi,</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Docker sẽ dùng lại cache mà không cần chạy npm install nữa.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">RUN</span> npm install<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># --- Giai đoạn 4: SAO CHÉP MÃ NGUỒN ---</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Bây giờ mới copy toàn bộ code của bạn (dấu &#39;.&#39;)</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># vào thư mục làm việc (dấu &#39;.&#39;) bên trong container.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Tách riêng bước này giúp mỗi khi bạn sửa code,</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Docker chỉ cần build lại lớp này mà không cần cài lại</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># node_modules ở trên.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">COPY</span> . .<span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># --- Giai đoạn 5: CHUẨN BỊ CHẠY ---</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># &#34;Mở cổng&#34; 3000 bên trong container.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Đây là bước &#34;thông báo&#34; rằng ứng dụng bên trong</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># sẽ lắng nghe ở cổng này.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">EXPOSE</span> <span style="color:#e6db74">3000</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Lệnh mặc định để chạy ứng dụng KHI container khởi động.</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#75715e"># Nó sẽ chạy lệnh: &#39;node server.js&#39;</span><span style="color:#960050;background-color:#1e0010">
+</span></span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"></span><span style="color:#66d9ef">CMD</span> [ <span style="color:#e6db74">&#34;node&#34;</span>, <span style="color:#e6db74">&#34;server.js&#34;</span> ]<span style="color:#960050;background-color:#1e0010">
+</span></span></span></code></pre></div><h3 id="bước-2-build-image-đóng-gói">Bước 2: &ldquo;Build&rdquo; Image (Đóng gói)</h3>
+<p>Bạn đã có bản thiết kế (<code>Dockerfile</code>), giờ hãy ra lệnh cho Docker &ldquo;xây dựng&rdquo; (build) cái image đó.</p>
+<p>Mở terminal ngay tại thư mục chứa <code>Dockerfile</code> và gõ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># &#39;docker build&#39;: Lệnh xây dựng image</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;-t my-node-app&#39;: &#39;-t&#39; là &#34;tag&#34; (nhãn), </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#                   để đặt tên cho image là &#39;my-node-app&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;.&#39;: Dấu chấm cuối cùng chỉ định Docker tìm Dockerfile</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#      ở ngay thư mục hiện tại.</span>
+</span></span><span style="display:flex;"><span>docker build -t my-node-app .
+</span></span></code></pre></div><p>Docker sẽ chạy qua từng bước trong <code>Dockerfile</code> của bạn (FROM, WORKDIR, RUN&hellip;). Lần đầu tiên có thể hơi lâu vì nó phải tải image <code>node:18-alpine</code> và chạy <code>npm install</code>.</p>
+<h3 id="bước-3-run-container-chạy-ứng-dụng">Bước 3: &ldquo;Run&rdquo; Container (Chạy ứng dụng)</h3>
+<p>Sau khi build thành công, &ldquo;image&rdquo; tên <code>my-node-app</code> đã nằm trên máy bạn. Giờ hãy &ldquo;chạy&rdquo; nó để tạo ra một &ldquo;container&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># &#39;docker run&#39;: Lệnh chạy một container mới</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;-p 3000:3000&#39;: Đây là phần quan trọng nhất!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    Ánh xạ cổng (port mapping) theo cú pháp [CổngMáyBạn]:[CổngContainer]</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    Nó &#34;nối&#34; cổng 3000 trên máy thật (laptop) của bạn</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#    vào cổng 3000 (mà ta đã EXPOSE) bên trong container.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;my-node-app&#39;: Tên của image mà chúng ta muốn chạy.</span>
+</span></span><span style="display:flex;"><span>docker run -p 3000:3000 my-node-app
+</span></span></code></pre></div><p>Nếu bạn thấy terminal báo <code>Server đang lắng nghe tại http://localhost:3000</code> (giống như khi chạy <code>node server.js</code>), điều đó có nghĩa là ứng dụng của bạn <strong>đang chạy thành công bên trong một container Docker biệt lập!</strong></p>
+<p>Bạn có thể mở trình duyệt, truy cập <code>http://localhost:3000</code> và thấy API của mình hoạt động y hệt như chạy bên ngoài.</p>
+<p>Từ giờ, bạn có thể đưa <code>Dockerfile</code> này cho bất kỳ ai, họ chỉ cần chạy 2 lệnh <code>docker build</code> và <code>docker run</code> là ứng dụng của bạn sẽ chạy &ldquo;ngon lành&rdquo; trên máy họ.</p>
+<pre tabindex="0"><code></code></pre></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/c%C3%B4ng-c%E1%BB%A5/">Công cụ</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/docker/">Docker</a><a class="tag" href="/tags/devops/">DevOps</a><a class="tag" href="/tags/container/">Container</a><a class="tag" href="/tags/node%2ejs/">Node.js</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

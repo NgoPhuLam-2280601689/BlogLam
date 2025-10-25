@@ -1,0 +1,505 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        Tại sao có trang web là &#39;ổ khóa&#39;, có trang lại &#39;Không bảo mật&#39;?
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Giải thích đơn giản HTTP là gì, HTTPS là gì, và tại sao chữ &#39;S&#39; (Secure) lại là một trong những thứ quan trọng nhất trên Internet hiện đại."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tại sao có trang web là &#39;ổ khóa&#39;, có trang lại &#39;Không bảo mật&#39;?">
+  <meta name="twitter:description" content="Giải thích đơn giản HTTP là gì, HTTPS là gì, và tại sao chữ &#39;S&#39; (Secure) lại là một trong những thứ quan trọng nhất trên Internet hiện đại.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="Tại sao có trang web là &#39;ổ khóa&#39;, có trang lại &#39;Không bảo mật&#39;?">
+  <meta property="og:description" content="Giải thích đơn giản HTTP là gì, HTTPS là gì, và tại sao chữ &#39;S&#39; (Secure) lại là một trong những thứ quan trọng nhất trên Internet hiện đại.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-23T11:15:00+07:00">
+    <meta property="article:modified_time" content="2025-10-23T11:15:00+07:00">
+    <meta property="article:tag" content="Mạng Máy Tính">
+    <meta property="article:tag" content="HTTP">
+    <meta property="article:tag" content="HTTPS">
+    <meta property="article:tag" content="Bảo Mật">
+    <meta property="article:tag" content="Lập Trình Mạng">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Tại sao có trang web là \u0027ổ khóa\u0027, có trang lại \u0027Không bảo mật\u0027?",
+        "headline": "Tại sao có trang web là \u0027ổ khóa\u0027, có trang lại \u0027Không bảo mật\u0027?",
+        "alternativeHeadline": "",
+        "description": "
+      Giải thích đơn giản HTTP là gì, HTTPS là gì, và tại sao chữ \u0027S\u0027 (Secure) lại là một trong những thứ quan trọng nhất trên Internet hiện đại.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-04-hieu-ve-http-va-https\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-23T11:15:00.00Z",
+        "datePublished": "2025-10-23T11:15:00.00Z",
+        "dateModified": "2025-10-23T11:15:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-04-hieu-ve-http-va-https\/",
+        "wordCount" : "700",
+        "genre" : [ 
+      
+      "Lập trình mạng"
+
+    ],
+        "keywords" : [ 
+      
+      "Mạng máy tính"
+
+    
+      
+        ,
+
+      
+      "HTTP"
+
+    
+      
+        ,
+
+      
+      "HTTPS"
+
+    
+      
+        ,
+
+      
+      "Bảo mật"
+
+    
+      
+        ,
+
+      
+      "Lập trình mạng"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Tại Sao Có Trang Web Là &#39;Ổ Khóa&#39;, Có Trang Lại &#39;Không Bảo Mật&#39;?</h1>
+      
+      <p>Khi bạn gõ một địa chỉ web vào trình duyệt, bạn có bao giờ để ý tiền tố <code>http://</code> hoặc <code>https://</code> không? Hay biểu tượng &ldquo;ổ khóa&rdquo; 🔒 bên cạnh?</p>
+<p>Đó chính là &ldquo;giao thức&rdquo; (protocol) mà trình duyệt của bạn đang sử dụng để &ldquo;nói chuyện&rdquo; với máy chủ của trang web. Đây là một trong những khái niệm nền tảng nhất của môn Lập trình Mạng.</p>
+<h3 id="http-tấm-bưu-thiếp-của-internet">HTTP: &ldquo;Tấm bưu thiếp&rdquo; của Internet</h3>
+<p><strong>HTTP</strong> là viết tắt của <strong>Hypertext Transfer Protocol</strong> (Giao thức truyền tải siêu văn bản).</p>
+<ul>
+<li><strong>Hypertext (Siêu văn bản):</strong> Là bất cứ thứ gì có thể bấm vào được trên web (link, ảnh, nút bấm&hellip;).</li>
+<li><strong>Protocol (Giao thức):</strong> Là bộ &ldquo;quy tắc&rdquo; giao tiếp.</li>
+</ul>
+<p>Bạn có thể tưởng tượng <strong>HTTP giống như việc bạn gửi một tấm bưu thiếp</strong>.</p>
+<ol>
+<li><strong>Request (Yêu cầu):</strong> Bạn (trình duyệt) viết một yêu cầu lên bưu thiếp: &ldquo;Gửi cho tôi nội dung trang <code>index.html</code>.&rdquo; (Ví dụ: <code>GET /index.html HTTP/1.1</code>)</li>
+<li><strong>Transport (Vận chuyển):</strong> Tấm bưu thiếp được gửi qua mạng Internet đến máy chủ (web server).</li>
+<li><strong>Response (Phản hồi):</strong> Máy chủ đọc yêu cầu, lấy nội dung trang web, ghi vào một tấm bưu thiếp khác và gửi trả lại cho bạn. (Ví dụ: <code>HTTP/1.1 200 OK</code>, theo sau là nội dung HTML).</li>
+</ol>
+<p>Vấn đề lớn nhất của HTTP là gì? <strong>Bưu thiếp là công khai.</strong></p>
+<p>Bất kỳ ai (hacker, nhà cung cấp mạng) ở giữa bạn và máy chủ đều có thể <strong>đọc trộm</strong> nội dung tấm bưu thiếp. Nếu bạn gửi mật khẩu hoặc thông tin thẻ tín dụng qua HTTP, nó cũng giống như bạn viết mật khẩu của mình lên bưu thiếp và gửi đi vậy. Rất nguy hiểm!</p>
+<h3 id="https-bức-thư-niêm-phong-an-toàn">HTTPS: &ldquo;Bức thư niêm phong&rdquo; an toàn</h3>
+<p><strong>HTTPS</strong> là viết tắt của <strong>Hypertext Transfer Protocol Secure</strong> (Giao thức truyền tải siêu văn bản An toàn).</p>
+<p>Nó chính là HTTP, nhưng được bổ sung thêm một lớp bảo mật mạnh mẽ gọi là <strong>TLS/SSL</strong>.</p>
+<p>Nếu HTTP là bưu thiếp, thì <strong>HTTPS giống như một bức thư được niêm phong trong một két sắt an toàn</strong>:</p>
+<ol>
+<li><strong>Xác thực (Authentication):</strong> Trước khi gửi, trình duyệt của bạn (client) yêu cầu máy chủ &ldquo;cho xem chứng minh thư&rdquo;. Máy chủ sẽ đưa ra <strong>Chứng chỉ SSL/TLS</strong> (giống như &ldquo;chứng minh thư&rdquo; được cấp bởi một bên thứ ba đáng tin cậy, gọi là Certificate Authority - CA). Trình duyệt của bạn kiểm tra và xác nhận: &ldquo;À, đúng là tôi đang nói chuyện với <code>google.com</code> thật, không phải kẻ mạo danh.&rdquo;</li>
+<li><strong>Mã hóa (Encryption):</strong> Sau khi xác thực, trình duyệt và máy chủ &ldquo;thỏa thuận&rdquo; một bộ chìa khóa bí mật (khóa mã hóa). Mọi dữ liệu (mật khẩu, nội dung web&hellip;) trước khi gửi đi đều được <strong>mã hóa (scrambled)</strong> bằng chìa khóa này.</li>
+<li><strong>Toàn vẹn (Integrity):</strong> Bức thư này được &ldquo;niêm phong&rdquo;. Nếu một hacker cố gắng thay đổi nội dung thư (ví dụ: thay đổi số tài khoản), niêm phong sẽ bị phá vỡ và trình duyệt của bạn sẽ phát hiện ra ngay lập tức.</li>
+</ol>
+<h3 id="tóm-tắt-sự-khác-biệt">Tóm tắt sự khác biệt</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tính năng</th>
+          <th style="text-align: left">HTTP (Bưu thiếp)</th>
+          <th style="text-align: left">HTTPS (Thư niêm phong)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Bảo mật</strong></td>
+          <td style="text-align: left">❌ Không mã hóa (Plain text)</td>
+          <td style="text-align: left">✅ <strong>Có mã hóa (Encrypted)</strong></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Bị nghe lén?</strong></td>
+          <td style="text-align: left">Rất dễ dàng</td>
+          <td style="text-align: left">Gần như không thể</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Bị sửa đổi?</strong></td>
+          <td style="text-align: left">Có thể bị sửa đổi dữ liệu</td>
+          <td style="text-align: left">❌ Không thể (Đảm bảo toàn vẹn)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Xác thực</strong></td>
+          <td style="text-align: left">Không biết đang nói chuyện với ai</td>
+          <td style="text-align: left">✅ <strong>Xác thực</strong> máy chủ qua SSL</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Biểu tượng</strong></td>
+          <td style="text-align: left">⚠️ (Không bảo mật)</td>
+          <td style="text-align: left">🔒 (Ổ khóa)</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Cổng (Port)</strong></td>
+          <td style="text-align: left">Mặc định là cổng 80</td>
+          <td style="text-align: left">Mặc định là cổng 443</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="tại-sao-điều-này-quan-trọng">Tại sao điều này quan trọng?</h3>
+<p>Ngày nay, HTTPS không còn là một &ldquo;tùy chọn&rdquo; mà gần như là <strong>bắt buộc</strong>.</p>
+<ul>
+<li>Nó bảo vệ thông tin đăng nhập, mật khẩu, và dữ liệu thanh toán của bạn.</li>
+<li>Nó mang lại sự tin tưởng cho người dùng (Bạn có dám nhập mật khẩu vào một trang báo &ldquo;Không bảo mật&rdquo; không?).</li>
+<li>Google ưu tiên xếp hạng các trang web dùng HTTPS cao hơn trên kết quả tìm kiếm.</li>
+</ul>
+<p>Vì vậy, khi bạn thấy biểu tượng ổ khóa 🔒 và tiền tố <code>https://</code>, hãy yên tâm rằng kết nối của bạn đang được bảo vệ!</p>
+<pre tabindex="0"><code></code></pre></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập trình mạng</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/">Mạng máy tính</a><a class="tag" href="/tags/http/">HTTP</a><a class="tag" href="/tags/https/">HTTPS</a><a class="tag" href="/tags/b%E1%BA%A3o-m%E1%BA%ADt/">Bảo mật</a><a class="tag" href="/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/">Lập trình mạng</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

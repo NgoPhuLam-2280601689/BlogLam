@@ -1,0 +1,511 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        Các lệnh Git cơ bản sinh viên CNTT phải biết
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Đừng code chay nữa! Hiểu rõ Git là gì và học cách dùng các lệnh cơ bản (commit, push, pull, branch) để quản lý code như một lập trình viên chuyên nghiệp."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Các lệnh Git cơ bản sinh viên CNTT phải biết">
+  <meta name="twitter:description" content="Đừng code chay nữa! Hiểu rõ Git là gì và học cách dùng các lệnh cơ bản (commit, push, pull, branch) để quản lý code như một lập trình viên chuyên nghiệp.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="Các lệnh Git cơ bản sinh viên CNTT phải biết">
+  <meta property="og:description" content="Đừng code chay nữa! Hiểu rõ Git là gì và học cách dùng các lệnh cơ bản (commit, push, pull, branch) để quản lý code như một lập trình viên chuyên nghiệp.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-22T19:00:00+07:00">
+    <meta property="article:modified_time" content="2025-10-22T19:00:00+07:00">
+    <meta property="article:tag" content="Git">
+    <meta property="article:tag" content="Version Control">
+    <meta property="article:tag" content="GitHub">
+    <meta property="article:tag" content="Hướng Dẫn">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Các lệnh Git cơ bản sinh viên CNTT phải biết",
+        "headline": "Các lệnh Git cơ bản sinh viên CNTT phải biết",
+        "alternativeHeadline": "",
+        "description": "
+      Đừng code chay nữa! Hiểu rõ Git là gì và học cách dùng các lệnh cơ bản (commit, push, pull, branch) để quản lý code như một lập trình viên chuyên nghiệp.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-01-huong-dan-git-co-ban\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-22T19:00:00.00Z",
+        "datePublished": "2025-10-22T19:00:00.00Z",
+        "dateModified": "2025-10-22T19:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-01-huong-dan-git-co-ban\/",
+        "wordCount" : "1030",
+        "genre" : [ 
+      
+      "Công cụ"
+
+    ],
+        "keywords" : [ 
+      
+      "Git"
+
+    
+      
+        ,
+
+      
+      "Version Control"
+
+    
+      
+        ,
+
+      
+      "GitHub"
+
+    
+      
+        ,
+
+      
+      "Hướng dẫn"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Các Lệnh Git Cơ Bản Sinh Viên CNTT Phải Biết</h1>
+      
+      <p>Nếu bạn là lập trình viên, việc bạn không biết dùng Git cũng giống như một nhà văn không biết cách dùng &ldquo;Undo&rdquo; (Hoàn tác) hay &ldquo;Save As&hellip;&rdquo; (Lưu thành bản khác).</p>
+<p>Git là một <strong>Hệ thống Quản lý Phiên bản Phân tán</strong> (Distributed Version Control System).</p>
+<p>Nói đơn giản: Git là một cỗ máy thời gian cho code của bạn.</p>
+<ul>
+<li>Nó cho phép bạn lưu lại các &ldquo;ảnh chụp&rdquo; (snapshot) của dự án tại những thời điểm quan trọng.</li>
+<li>Nếu bạn làm hỏng thứ gì đó, bạn có thể quay trở lại &ldquo;ảnh chụp&rdquo; trước đó.</li>
+<li>Nó cho phép nhiều người cùng làm việc trên một dự án mà không &ldquo;dẫm chân&rdquo; lên code của nhau.</li>
+</ul>
+<p>Bài viết này sẽ hướng dẫn bạn những lệnh Git cơ bản nhất mà bạn sẽ dùng HÀNG NGÀY.</p>
+<h3 id="bước-0-cấu-hình-danh-tính">Bước 0: Cấu hình &ldquo;Danh tính&rdquo;</h3>
+<p>Trước khi làm bất cứ điều gì, bạn phải giới thiệu cho Git biết bạn là ai. Git sẽ dùng thông tin này để &ldquo;đóng dấu&rdquo; lên mỗi thay đổi (commit) mà bạn tạo ra.</p>
+<p>Mở terminal (PowerShell, Git Bash&hellip;) và gõ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Thay bằng tên của bạn</span>
+</span></span><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;Nguyen Van An&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Thay bằng email bạn dùng trên GitHub</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;an.nguyen@email.com&#34;</span>
+</span></span></code></pre></div><p>Bạn chỉ cần làm việc này <strong>một lần duy nhất</strong> trên máy của mình.</p>
+<h3 id="bước-1-khởi-tạo-kho-chứa-repository">Bước 1: Khởi tạo &ldquo;Kho chứa&rdquo; (Repository)</h3>
+<p>Đầu tiên, bạn cần có một dự án. Giả sử bạn có một thư mục tên <code>do-an-cuoi-ky</code>.</p>
+<p>Để &ldquo;biến&rdquo; thư mục này thành một kho chứa Git, hãy <code>cd</code> vào thư mục đó và gõ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git init
+</span></span></code></pre></div><p>Lệnh này sẽ tạo ra một thư mục con ẩn tên là <code>.git</code>. Đây là &ldquo;bộ não&rdquo; của Git, chứa toàn bộ lịch sử và các &ldquo;ảnh chụp&rdquo; của bạn. Bạn không bao giờ nên tự ý chỉnh sửa file trong thư mục này.</p>
+<h3 id="bước-2-ba-bước-thần-thánh-status-add-commit">Bước 2: &ldquo;Ba bước thần thánh&rdquo; (Status, Add, Commit)</h3>
+<p>Đây là quy trình bạn sẽ lặp đi lặp lại nhiều nhất khi làm việc với Git.</p>
+<h4 id="21-git-status-kiểm-tra-tình-hình">2.1. <code>git status</code>: Kiểm tra tình hình</h4>
+<p>Đây là lệnh &ldquo;bác sĩ&rdquo; của bạn. Bất cứ khi nào bạn không chắc mình đang làm gì, hãy gõ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git status
+</span></span></code></pre></div><p>Git sẽ cho bạn biết:</p>
+<ul>
+<li>Những file nào mới được tạo (untracked).</li>
+<li>Những file nào đã bị sửa (modified).</li>
+<li>Những file nào đã sẵn sàng để &ldquo;chụp ảnh&rdquo; (staged).</li>
+</ul>
+<h4 id="22-git-add-đưa-vào-phòng-chờ-staging-area">2.2. <code>git add</code>: Đưa vào &ldquo;Phòng chờ&rdquo; (Staging Area)</h4>
+<p>Giả sử bạn vừa tạo 2 file mới là <code>index.html</code> và <code>style.css</code>. Nếu bạn gõ <code>git status</code>, chúng sẽ xuất hiện màu đỏ (untracked).</p>
+<p>Trước khi &ldquo;chụp ảnh&rdquo;, bạn phải chọn những file nào bạn muốn đưa vào bức ảnh đó. Đây gọi là đưa file vào &ldquo;phòng chờ&rdquo; (Staging Area).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Thêm một file cụ thể</span>
+</span></span><span style="display:flex;"><span>git add index.html
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Thêm tất cả các file đã thay đổi trong thư mục hiện tại</span>
+</span></span><span style="display:flex;"><span>git add .
+</span></span></code></pre></div><p>Tại sao lại cần &ldquo;phòng chờ&rdquo;? Nó cho phép bạn nhóm các thay đổi lại. Ví dụ, bạn sửa 10 file, nhưng 5 file đầu là để sửa lỗi (bug), 5 file sau là để thêm tính năng (feature). Bạn có thể <code>add</code> 5 file đầu và <code>commit</code> (chụp ảnh) với tin nhắn &ldquo;Sửa lỗi A&rdquo;, sau đó <code>add</code> 5 file sau và <code>commit</code> với tin nhắn &ldquo;Thêm tính năng B&rdquo;.</p>
+<h4 id="23-git-commit-chụp-ảnh-lưu-lại">2.3. <code>git commit</code>: &ldquo;Chụp ảnh&rdquo; (Lưu lại)</h4>
+<p>Khi các file đã ở trong &ldquo;phòng chờ&rdquo;, bạn đã sẵn sàng để lưu chúng vào lịch sử. Đây là bước &ldquo;chụp ảnh&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Initial commit: Thêm file HTML và CSS cơ bản&#34;</span>
+</span></span></code></pre></div><ul>
+<li><code>commit</code> là hành động &ldquo;chụp ảnh&rdquo;.</li>
+<li><code>-m</code> là viết tắt của &ldquo;message&rdquo; (tin nhắn).</li>
+<li>Nội dung trong dấu ngoặc kép là <strong>bắt buộc</strong>. Đây là lời ghi chú để bạn (và đồng đội) biết &ldquo;bức ảnh&rdquo; này đã thay đổi những gì. <strong>Hãy tập viết commit message rõ ràng!</strong></li>
+</ul>
+<h3 id="bước-3-đẩy-code-lên-đám-mây-github">Bước 3: Đẩy code lên &ldquo;Đám mây&rdquo; (GitHub)</h3>
+<p>Hiện tại, toàn bộ lịch sử code (các commit) mới chỉ nằm trên máy tính của bạn. Nếu máy tính bị hỏng, bạn sẽ mất tất cả.</p>
+<p>Chúng ta cần &ldquo;sao lưu&rdquo; nó lên một nơi gọi là &ldquo;remote repository&rdquo; (kho chứa từ xa), ví dụ như GitHub.</p>
+<p>Giả sử bạn đã lên GitHub.com và tạo một kho chứa (repository) rỗng tên là <code>do-an-cuoi-ky</code>.</p>
+<h4 id="31-git-remote-add-kết-nối-với-nhà">3.1. <code>git remote add</code>: Kết nối với &ldquo;Nhà&rdquo;</h4>
+<p>Bạn cần cho Git ở máy bạn biết &ldquo;địa chỉ nhà&rdquo; trên GitHub.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Copy-paste đường link .git từ trang repo GitHub của bạn</span>
+</span></span><span style="display:flex;"><span>git remote add origin <span style="color:#f92672">[</span>https://github.com/TenCuaBan/do-an-cuoi-ky.git<span style="color:#f92672">](</span>https://github.com/TenCuaBan/do-an-cuoi-ky.git<span style="color:#f92672">)</span>
+</span></span></code></pre></div><ul>
+<li><code>remote add</code>: Thêm một địa chỉ từ xa.</li>
+<li><code>origin</code>: Đây là <strong>tên gọi tắt</strong> (biệt danh) mặc định cho &ldquo;nhà&rdquo; của bạn. Bạn có thể đặt tên khác, nhưng 99% mọi người đều dùng <code>origin</code>.</li>
+</ul>
+<h4 id="32-git-push-đẩy-ảnh-chụp-lên-nhà">3.2. <code>git push</code>: Đẩy &ldquo;Ảnh chụp&rdquo; lên nhà</h4>
+<p>Bây giờ, hãy đẩy toàn bộ &ldquo;album ảnh&rdquo; (các commit) của bạn từ máy tính lên <code>origin</code> (GitHub).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><ul>
+<li><code>push</code>: Đẩy code đi.</li>
+<li><code>origin</code>: Đẩy đi đâu? Đẩy lên &ldquo;nhà&rdquo; (địa chỉ chúng ta vừa thêm).</li>
+<li><code>main</code>: Đẩy nhánh nào? Đẩy nhánh tên là <code>main</code> (trước đây thường gọi là <code>master</code>).</li>
+<li><code>-u</code>: Là một lệnh &ldquo;cài đặt&rdquo; để lần sau bạn chỉ cần gõ <code>git push</code> là Git tự hiểu bạn muốn đẩy lên <code>origin main</code>.</li>
+</ul>
+<h3 id="bước-4-lấy-code-từ-nhà-về-làm-việc-nhóm">Bước 4: Lấy code từ &ldquo;Nhà&rdquo; về (Làm việc nhóm)</h3>
+<p>Giả sử đồng đội của bạn cũng <code>push</code> một thay đổi lên GitHub. Làm sao để bạn cập nhật code mới nhất đó về máy?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git pull origin main
+</span></span></code></pre></div><ul>
+<li><code>pull</code>: Kéo code về.</li>
+<li><code>origin main</code>: Kéo từ nhánh <code>main</code> trên <code>origin</code> (GitHub).</li>
+</ul>
+<p>Lệnh này sẽ tự động tải code mới về và &ldquo;trộn&rdquo; (merge) vào code hiện tại của bạn.</p>
+<h3 id="tóm-tắt-những-lệnh-bạn-sẽ-dùng-90-thời-gian">Tóm tắt (Những lệnh bạn sẽ dùng 90% thời gian)</h3>
+<ol>
+<li><strong><code>git status</code></strong>: Xem có gì mới.</li>
+<li><strong><code>git add .</code></strong>: Thêm tất cả thay đổi vào phòng chờ.</li>
+<li><strong><code>git commit -m &quot;Tin nhắn&quot;</code></strong>: Lưu lại thay đổi với một tin nhắn.</li>
+<li><strong><code>git pull</code></strong>: Lấy code mới nhất từ đồng đội về.</li>
+<li><strong><code>git push</code></strong>: Đẩy code của mình lên cho đồng đội.</li>
+</ol>
+<p>Đây chỉ là những bước đầu tiên, nhưng cũng là nền tảng quan trọng nhất để làm việc với Git. Chúc bạn code vui!</p>
+<pre tabindex="0"><code></code></pre></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/c%C3%B4ng-c%E1%BB%A5/">Công cụ</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/git/">Git</a><a class="tag" href="/tags/version-control/">Version Control</a><a class="tag" href="/tags/github/">GitHub</a><a class="tag" href="/tags/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/">Hướng dẫn</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

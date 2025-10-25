@@ -1,0 +1,62 @@
+# Tên của quy trình tự động
+name: Deploy Hugo site to Pages
+
+# Kích hoạt quy trình khi bạn 'push' code lên nhánh 'main'
+on:
+  push:
+    branches:
+      - main  # Hoặc 'master' tùy vào nhánh chính của bạn
+
+  # Cho phép bạn chạy quy trình này thủ công từ tab Actions
+  workflow_dispatch:
+
+# Cấp quyền cho quy trình
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Cài đặt concurrency để không bị deploy chồng chéo
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+# Các bước thực hiện
+jobs:
+  # Bước 1: Build trang web
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # Rất quan trọng: Tải cả theme (submodule)
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest' # Dùng phiên bản Hugo mới nhất
+          extended: true         # Bắt buộc: Cài bản extended (để chạy SASS)
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        run: hugo --gc --minify --baseURL "${{ steps.pages.outputs.base_url }}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  # Bước 2: Deploy trang web
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

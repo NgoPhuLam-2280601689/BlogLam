@@ -1,0 +1,500 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Tại sao Flexbox lại là một cuộc cách mạng trong CSS? Hướng dẫn chi tiết các khái niệm quan trọng nhất để bạn làm chủ bố cục trang web."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết">
+  <meta name="twitter:description" content="Tại sao Flexbox lại là một cuộc cách mạng trong CSS? Hướng dẫn chi tiết các khái niệm quan trọng nhất để bạn làm chủ bố cục trang web.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-05-css-flexbox-lam-chu-trang-web/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết">
+  <meta property="og:description" content="Tại sao Flexbox lại là một cuộc cách mạng trong CSS? Hướng dẫn chi tiết các khái niệm quan trọng nhất để bạn làm chủ bố cục trang web.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-22T16:45:00+07:00">
+    <meta property="article:modified_time" content="2025-10-22T16:45:00+07:00">
+    <meta property="article:tag" content="CSS">
+    <meta property="article:tag" content="Front-End">
+    <meta property="article:tag" content="Flexbox">
+    <meta property="article:tag" content="UI/UX">
+    <meta property="article:tag" content="Layout">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết",
+        "headline": "Làm chủ Bố cục Web với CSS Flexbox: Hướng dẫn chi tiết",
+        "alternativeHeadline": "",
+        "description": "
+      Tại sao Flexbox lại là một cuộc cách mạng trong CSS? Hướng dẫn chi tiết các khái niệm quan trọng nhất để bạn làm chủ bố cục trang web.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-05-css-flexbox-lam-chu-trang-web\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-22T16:45:00.00Z",
+        "datePublished": "2025-10-22T16:45:00.00Z",
+        "dateModified": "2025-10-22T16:45:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-05-css-flexbox-lam-chu-trang-web\/",
+        "wordCount" : "711",
+        "genre" : [ 
+      
+      "Lập trình Front-end"
+
+    ],
+        "keywords" : [ 
+      
+      "CSS"
+
+    
+      
+        ,
+
+      
+      "Front-end"
+
+    
+      
+        ,
+
+      
+      "Flexbox"
+
+    
+      
+        ,
+
+      
+      "UI\/UX"
+
+    
+      
+        ,
+
+      
+      "Layout"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Làm Chủ Bố Cục Web Với CSS Flexbox: Hướng Dẫn Chi Tiết</h1>
+      
+      <p>Nếu bạn đã từng &ldquo;vật lộn&rdquo; để căn giữa một phần tử (element) theo chiều dọc, hay cố gắng chia các cột đều nhau bằng <code>float</code> hoặc <code>inline-block</code>, bạn sẽ hiểu tại sao CSS Flexbox được xem là một &ldquo;cuộc cách mạng&rdquo;.</p>
+<p>Trước khi có Flexbox, việc sắp xếp bố cục (layout) trong CSS rất phức tạp và hack não. Nhưng <strong>Flexbox (Flexible Box Layout)</strong> đã thay đổi tất cả.</p>
+<h3 id="flexbox-là-gì">Flexbox là gì?</h3>
+<p>Nói đơn giản, Flexbox là một mô hình bố cục (layout model) trong CSS. Nó được thiết kế để cung cấp một cách hiệu quả hơn để <strong>sắp xếp, căn chỉnh và phân phối không gian</strong> giữa các phần tử trong một &ldquo;hộp chứa&rdquo; (container), ngay cả khi kích thước của chúng không xác định hoặc thay đổi (flexible).</p>
+<p>Điều quan trọng nhất cần nhớ: Flexbox là mô hình bố cục <strong>1 chiều</strong> (one-dimensional). Tức là nó giúp bạn sắp xếp các phần tử một cách hiệu quả theo <strong>một hàng</strong> (row) hoặc <strong>một cột</strong> (column).</p>
+<h3 id="hai-nhân-vật-chính-container-và-items">Hai &ldquo;nhân vật&rdquo; chính: Container và Items</h3>
+<p>Để Flexbox hoạt động, bạn luôn cần 2 thứ:</p>
+<ol>
+<li><strong>Flex Container:</strong> Đây là phần tử &ldquo;cha&rdquo; (parent). Bạn &ldquo;kích hoạt&rdquo; Flexbox bằng cách gán cho nó thuộc tính <code>display: flex;</code>. Ngay lập tức, mọi &ldquo;đứa con&rdquo; bên trong nó sẽ tuân theo các quy tắc của Flexbox.</li>
+<li><strong>Flex Items:</strong> Đây là các phần tử &ldquo;con&rdquo; (children) nằm <em>trực tiếp</em> bên trong Flex Container.</li>
+</ol>
+<h3 id="hiểu-về-2-trục-axes---đây-là-phần-quan-trọng-nhất">Hiểu về 2 Trục (Axes) - Đây là phần quan trọng nhất!</h3>
+<p>Khi bạn đặt <code>display: flex</code>, container sẽ tạo ra 2 trục vô hình:</p>
+<ol>
+<li><strong>Main Axis (Trục chính):</strong> Đây là hướng sắp xếp chính của các item. Mặc định, nó là trục <strong>ngang</strong> (từ trái sang phải).</li>
+<li><strong>Cross Axis (Trục phụ):</strong> Đây là trục vuông góc với Trục chính. Mặc định, nó là trục <strong>dọc</strong> (từ trên xuống dưới).</li>
+</ol>
+<p>Quan trọng: Bạn có thể thay đổi hướng của Trục chính bằng <code>flex-direction: column</code>. Khi đó, Trục chính sẽ là trục dọc, và Trục phụ sẽ là trục ngang.</p>
+<h3 id="các-thuộc-tính-thần-thánh-trên-flex-container">Các thuộc tính &ldquo;thần thánh&rdquo; trên Flex Container</h3>
+<p>Giờ hãy xem các thuộc tính bạn sẽ dùng nhiều nhất (đặt trên container cha):</p>
+<h4 id="1-justify-content-căn-chỉnh-trên-trục-chính">1. <code>justify-content</code>: Căn chỉnh trên Trục chính</h4>
+<p>Thuộc tính này quyết định cách các item được sắp xếp và phân phối không gian theo <strong>Trục chính</strong> (mặc định là chiều ngang).</p>
+<ul>
+<li><code>flex-start</code> (Mặc định): Dồn hết về bên trái.</li>
+<li><code>flex-end</code>: Dồn hết về bên phải.</li>
+<li><code>center</code>: Dồn hết vào giữa.</li>
+<li><code>space-between</code>: Căn đều; item đầu sát lề trái, item cuối sát lề phải, khoảng cách ở giữa bằng nhau.</li>
+<li><code>space-around</code>: Căn đều; khoảng cách hai bên mỗi item bằng nhau (khoảng cách ở giữa 2 item sẽ gấp đôi khoảng cách ở lề).</li>
+</ul>
+<h4 id="2-align-items-căn-chỉnh-trên-trục-phụ">2. <code>align-items</code>: Căn chỉnh trên Trục phụ</h4>
+<p>Thuộc tính này quyết định cách các item được căn chỉnh theo <strong>Trục phụ</strong> (mặc định là chiều dọc).</p>
+<ul>
+<li><code>stretch</code> (Mặc định): Kéo dãn các item cho bằng nhau (bằng chiều cao của container).</li>
+<li><code>flex-start</code>: Dồn hết lên trên.</li>
+<li><code>flex-end</code>: Dồn hết xuống dưới.</li>
+<li><code>center</code>: Căn giữa theo chiều dọc.</li>
+</ul>
+<h3 id="ví-dụ-kinh-điển-căn-giữa-mọi-thứ">Ví dụ kinh điển: Căn giữa mọi thứ</h3>
+<p>Hãy xem lại ví dụ trong phần giới thiệu. Chúng ta muốn căn 3 &ldquo;Item&rdquo; vào chính giữa (cả ngang và dọc) của một &ldquo;Container&rdquo;.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;Item 1&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;Item 2&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">div</span>&gt;Item 3&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-css" data-lang="css"><span style="display:flex;"><span><span style="color:#75715e">/* CSS */</span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">container</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* 1. Kích hoạt Flexbox */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">display</span>: <span style="color:#66d9ef">flex</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* 2. Căn giữa theo Trục chính (ngang) */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* Bạn có thể đổi &#39;space-around&#39; thành &#39;center&#39; 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">     để thấy sự khác biệt */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">justify-content</span>: <span style="color:#66d9ef">space-around</span>; 
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* 3. Căn giữa theo Trục phụ (dọc) */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">align-items</span>: <span style="color:#66d9ef">center</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">/* (CSS trang trí cho dễ nhìn) */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">2</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#ae81ff">#ccc</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">height</span>: <span style="color:#ae81ff">200</span><span style="color:#66d9ef">px</span>; <span style="color:#75715e">/* Phải có chiều cao 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">                    để thấy căn dọc hoạt động */</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>.<span style="color:#a6e22e">container</span> <span style="color:#f92672">div</span> { <span style="color:#75715e">/* CSS cho các Flex Items */</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">10</span><span style="color:#66d9ef">px</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">lightblue</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">border</span>: <span style="color:#ae81ff">1</span><span style="color:#66d9ef">px</span> <span style="color:#66d9ef">solid</span> <span style="color:#66d9ef">blue</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Chỉ với 3 dòng <code>display</code>, <code>justify-content</code>, và <code>align-items</code>, chúng ta đã làm được điều mà trước đây cần rất nhiều thủ thuật CSS phức tạp.</p>
+<p>Flexbox thực sự là một công cụ mạnh mẽ. Khi đã hiểu rõ về 2 trục (Main và Cross), bạn sẽ có thể tạo ra hầu hết mọi bố cục web một cách dễ dàng và linh hoạt!</p>
+<pre tabindex="0"><code></code></pre></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/l%E1%BA%ADp-tr%C3%ACnh-front-end/">Lập trình Front-end</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/css/">CSS</a><a class="tag" href="/tags/front-end/">Front-end</a><a class="tag" href="/tags/flexbox/">Flexbox</a><a class="tag" href="/tags/ui/ux/">UI/UX</a><a class="tag" href="/tags/layout/">Layout</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

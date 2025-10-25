@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Internet on Blog của Lâm</title>
+    <link>http://localhost:1313/tags/internet/</link>
+    <description>Recent content in Internet on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Thu, 16 Oct 2025 10:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/internet/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DNS là gì? &#39;Danh bạ điện thoại&#39; của Internet hoạt động như thế nào?</title>
+      <link>http://localhost:1313/posts/bai-09-dns-la-gi/</link>
+      <pubDate>Thu, 16 Oct 2025 10:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-09-dns-la-gi/</guid>
+      
+        <description>Giải thích đơn giản DNS là gì, tại sao chúng ta gõ được google.com thay vì một dãy số IP khó nhớ, và quy trình phân giải tên miền.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Blog của Lâm</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Sat, 25 Oct 2025 14:30:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>API</title>
+      <link>http://localhost:1313/tags/api/</link>
+      <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/api/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Back-End</title>
+      <link>http://localhost:1313/tags/back-end/</link>
+      <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/back-end/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Express</title>
+      <link>http://localhost:1313/tags/express/</link>
+      <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/express/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>http://localhost:1313/tags/node.js/</link>
+      <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/node.js/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>http://localhost:1313/tags/container/</link>
+      <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/container/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DevOps</title>
+      <link>http://localhost:1313/tags/devops/</link>
+      <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/devops/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>http://localhost:1313/tags/docker/</link>
+      <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/docker/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Bảo Mật</title>
+      <link>http://localhost:1313/tags/b%E1%BA%A3o-m%E1%BA%ADt/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/b%E1%BA%A3o-m%E1%BA%ADt/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>http://localhost:1313/tags/http/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/http/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>HTTPS</title>
+      <link>http://localhost:1313/tags/https/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/https/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Lập Trình Mạng</title>
+      <link>http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/l%E1%BA%ADp-tr%C3%ACnh-m%E1%BA%A1ng/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Mạng Máy Tính</title>
+      <link>http://localhost:1313/tags/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/m%E1%BA%A1ng-m%C3%A1y-t%C3%ADnh/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>http://localhost:1313/tags/git/</link>
+      <pubDate>Wed, 22 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/git/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>http://localhost:1313/tags/github/</link>
+      <pubDate>Wed, 22 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/github/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Hướng Dẫn</title>
+      <link>http://localhost:1313/tags/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/</link>
+      <pubDate>Wed, 22 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/h%C6%B0%E1%BB%9Bng-d%E1%BA%ABn/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Version Control</title>
+      <link>http://localhost:1313/tags/version-control/</link>
+      <pubDate>Wed, 22 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/version-control/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>CSS</title>
+      <link>http://localhost:1313/tags/css/</link>
+      <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/css/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Flexbox</title>
+      <link>http://localhost:1313/tags/flexbox/</link>
+      <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/flexbox/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Front-End</title>
+      <link>http://localhost:1313/tags/front-end/</link>
+      <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/front-end/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Layout</title>
+      <link>http://localhost:1313/tags/layout/</link>
+      <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/layout/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>UI/UX</title>
+      <link>http://localhost:1313/tags/ui/ux/</link>
+      <pubDate>Wed, 22 Oct 2025 16:45:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/ui/ux/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Code</title>
+      <link>http://localhost:1313/tags/code/</link>
+      <pubDate>Tue, 21 Oct 2025 13:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/code/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Tue, 21 Oct 2025 13:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/python/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Pythonic</title>
+      <link>http://localhost:1313/tags/pythonic/</link>
+      <pubDate>Tue, 21 Oct 2025 13:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/pythonic/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>http://localhost:1313/tags/tips/</link>
+      <pubDate>Tue, 21 Oct 2025 13:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/tips/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Cơ Sở Dữ Liệu</title>
+      <link>http://localhost:1313/tags/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</link>
+      <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Data</title>
+      <link>http://localhost:1313/tags/data/</link>
+      <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/data/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>http://localhost:1313/tags/database/</link>
+      <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/database/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>SQL</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Mon, 20 Oct 2025 10:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/sql/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>JavaScript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Sat, 18 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>DNS</title>
+      <link>http://localhost:1313/tags/dns/</link>
+      <pubDate>Thu, 16 Oct 2025 10:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/dns/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title>Internet</title>
+      <link>http://localhost:1313/tags/internet/</link>
+      <pubDate>Thu, 16 Oct 2025 10:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/tags/internet/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+  </channel>
+</rss>

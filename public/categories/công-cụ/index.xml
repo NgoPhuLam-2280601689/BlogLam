@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Công Cụ on Blog của Lâm</title>
+    <link>http://localhost:1313/categories/c%C3%B4ng-c%E1%BB%A5/</link>
+    <description>Recent content in Công Cụ on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Fri, 24 Oct 2025 09:00:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/categories/c%C3%B4ng-c%E1%BB%A5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Giải quyết nỗi lo &#39;Nó chạy trên máy em!&#39;</title>
+      <link>http://localhost:1313/posts/bai-03-docker-co-ban/</link>
+      <pubDate>Fri, 24 Oct 2025 09:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-03-docker-co-ban/</guid>
+      
+        <description>Docker là gì? Tại sao nó lại &#39;hot&#39; đến vậy? Hướng dẫn &#39;dockerize&#39; một ứng dụng Node.js cho người mới bắt đầu.</description>
+      
+    </item>
+    
+    <item>
+      <title>Các lệnh Git cơ bản sinh viên CNTT phải biết</title>
+      <link>http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/</link>
+      <pubDate>Wed, 22 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-01-huong-dan-git-co-ban/</guid>
+      
+        <description>Đừng code chay nữa! Hiểu rõ Git là gì và học cách dùng các lệnh cơ bản (commit, push, pull, branch) để quản lý code như một lập trình viên chuyên nghiệp.</description>
+      
+    </item>
+    
+  </channel>
+</rss>

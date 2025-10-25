@@ -1,0 +1,513 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        Tạo API RESTful đơn giản với Node.js và Express
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="Hướng dẫn chi tiết cách xây dựng một API CRUD (Tạo, Đọc) cơ bản bằng Node.js và Express.js cho người mới bắt đầu."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Tạo API RESTful đơn giản với Node.js và Express">
+  <meta name="twitter:description" content="Hướng dẫn chi tiết cách xây dựng một API CRUD (Tạo, Đọc) cơ bản bằng Node.js và Express.js cho người mới bắt đầu.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="Tạo API RESTful đơn giản với Node.js và Express">
+  <meta property="og:description" content="Hướng dẫn chi tiết cách xây dựng một API CRUD (Tạo, Đọc) cơ bản bằng Node.js và Express.js cho người mới bắt đầu.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-25T14:30:00+07:00">
+    <meta property="article:modified_time" content="2025-10-25T14:30:00+07:00">
+    <meta property="article:tag" content="Node.js">
+    <meta property="article:tag" content="Express">
+    <meta property="article:tag" content="API">
+    <meta property="article:tag" content="Back-End">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "Tạo API RESTful đơn giản với Node.js và Express",
+        "headline": "Tạo API RESTful đơn giản với Node.js và Express",
+        "alternativeHeadline": "",
+        "description": "
+      Hướng dẫn chi tiết cách xây dựng một API CRUD (Tạo, Đọc) cơ bản bằng Node.js và Express.js cho người mới bắt đầu.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-02-tao-api-restful-voi-nodejs\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-25T14:30:00.00Z",
+        "datePublished": "2025-10-25T14:30:00.00Z",
+        "dateModified": "2025-10-25T14:30:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-02-tao-api-restful-voi-nodejs\/",
+        "wordCount" : "681",
+        "genre" : [ 
+      
+      "Lập trình Back-end"
+
+    ],
+        "keywords" : [ 
+      
+      "Node.js"
+
+    
+      
+        ,
+
+      
+      "Express"
+
+    
+      
+        ,
+
+      
+      "API"
+
+    
+      
+        ,
+
+      
+      "Back-end"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Tạo API RESTful Đơn Giản Với Node.js Và Express</h1>
+      
+      <p>Khi nói đến việc xây dựng back-end cho ứng dụng web, Node.js và Express.js là một &ldquo;cặp đôi&rdquo; cực kỳ phổ biến.</p>
+<ul>
+<li><strong>Node.js</strong> là môi trường cho phép bạn chạy code JavaScript ở phía máy chủ (thay vì chỉ trên trình duyệt).</li>
+<li><strong>Express.js</strong> là một framework (bộ khung) tối giản được xây dựng trên nền Node.js. Nó cung cấp các công cụ mạnh mẽ giúp việc định tuyến (routing) và xử lý các yêu cầu HTTP (như <code>GET</code>, <code>POST</code>) trở nên nhanh chóng và dễ dàng.</li>
+</ul>
+<p>Trong bài viết này, chúng ta sẽ cùng nhau tạo một API &ldquo;CRUD&rdquo; siêu đơn giản. (CRUD là viết tắt của Create, Read, Update, Delete - nhưng trong bài này, chúng ta sẽ tập trung vào <strong>Create</strong> và <strong>Read</strong> trước).</p>
+<h3 id="bước-1-khởi-tạo-dự-án-và-cài-đặt">Bước 1: Khởi tạo dự án và Cài đặt</h3>
+<p>Đầu tiên, hãy mở terminal, tạo một thư mục mới cho dự án (ví dụ <code>my-api</code>) và di chuyển vào đó.</p>
+<p>Sau đó, gõ hai lệnh sau:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Lệnh 1: Khởi tạo một dự án Node.js</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &#39;-y&#39; có nghĩa là đồng ý với tất cả các câu hỏi mặc định</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Nó sẽ tạo ra file package.json để quản lý dự án</span>
+</span></span><span style="display:flex;"><span>npm init -y
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Lệnh 2: Cài đặt thư viện Express</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Node.js sẽ tải Express về và lưu vào thư mục node_modules</span>
+</span></span><span style="display:flex;"><span>npm install express
+</span></span></code></pre></div><h3 id="bước-2-tạo-file-serverjs-và-viết-code">Bước 2: Tạo file <code>server.js</code> và Viết code</h3>
+<p>Bây giờ, hãy tạo một file tên là <code>server.js</code> trong thư mục dự án của bạn. Đây sẽ là &ldquo;trái tim&rdquo; của API.</p>
+<p>Hãy dán toàn bộ đoạn code sau vào file <code>server.js</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">// 1. &#34;Nhập khẩu&#34; thư viện Express
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">express</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;express&#39;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 2. Tạo một ứng dụng (app) Express
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">express</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 3. Chọn một cổng (port) cho server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 3000 là cổng truyền thống cho các server phát triển
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">port</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3000</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 4. Middleware: Xử lý JSON
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Dòng này cực kỳ quan trọng!
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Nó bảo Express tự động &#34;đọc&#34; và &#34;phân tích&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// bất kỳ dữ liệu JSON nào được gửi đến trong body của request.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">use</span>(<span style="color:#a6e22e">express</span>.<span style="color:#a6e22e">json</span>());
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 5. Tạo một cơ sở dữ liệu &#34;giả&#34; (in-memory)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Để đơn giản, chúng ta lưu dữ liệu trong một mảng.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Khi server tắt, dữ liệu này sẽ mất.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">users</span> <span style="color:#f92672">=</span> [
+</span></span><span style="display:flex;"><span>    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Alice&#34;</span> },
+</span></span><span style="display:flex;"><span>    { <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Bob&#34;</span> }
+</span></span><span style="display:flex;"><span>];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 6. ĐỊNH TUYẾN (Routing)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --- GET (Đọc) tất cả users ---
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Khi ai đó truy cập (GET) vào đường dẫn &#39;/users&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/users&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// &#39;req&#39; (Request): Chứa thông tin về yêu cầu
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// &#39;res&#39; (Response): Dùng để gửi phản hồi về cho client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Trả về toàn bộ mảng &#39;users&#39; dưới dạng JSON
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">users</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// --- POST (Tạo) một user mới ---
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Khi ai đó gửi dữ liệu (POST) đến đường dẫn &#39;/users&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">post</span>(<span style="color:#e6db74">&#39;/users&#39;</span>, (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Lấy dữ liệu user mới từ body của request
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// (Nhờ có &#39;app.use(express.json())&#39; nên ta mới có req.body)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">newUser</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>, <span style="color:#75715e">// Tạo ID đơn giản
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">req</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">name</span>   <span style="color:#75715e">// Lấy tên từ dữ liệu gửi lên
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  };
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Thêm user mới vào mảng &#34;cơ sở dữ liệu&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">users</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">newUser</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Phản hồi cho client
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// &#39;status(201)&#39; có nghĩa là &#34;Created&#34; (Đã tạo thành công)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// và gửi trả lại thông tin user vừa tạo
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">status</span>(<span style="color:#ae81ff">201</span>).<span style="color:#a6e22e">json</span>(<span style="color:#a6e22e">newUser</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// 7. Khởi chạy Server
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// Bảo server &#34;lắng nghe&#34; các yêu cầu ở cổng 3000
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">app</span>.<span style="color:#a6e22e">listen</span>(<span style="color:#a6e22e">port</span>, () =&gt; {
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// In ra thông báo khi server đã sẵn sàng
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`Server đang lắng nghe tại http://localhost:</span><span style="color:#e6db74">${</span><span style="color:#a6e22e">port</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><h3 id="bước-3-chạy-server">Bước 3: Chạy Server!</h3>
+<p>Mọi thứ đã sẵn sàng. Quay lại terminal của bạn và gõ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>node server.js
+</span></span></code></pre></div><p>Nếu bạn thấy dòng chữ <code>Server đang lắng nghe tại http://localhost:3000</code>, chúc mừng, API của bạn đã hoạt động!</p>
+<p>Bạn có thể dùng các công cụ như <strong>Postman</strong> hoặc <strong>curl</strong> để:</p>
+<ol>
+<li>Gửi yêu cầu <strong>GET</strong> đến <code>http://localhost:3000/users</code> để xem danh sách &ldquo;Alice&rdquo; và &ldquo;Bob&rdquo;.</li>
+<li>Gửi yêu cầu <strong>POST</strong> đến <code>http://localhost:3000/users</code> (kèm theo một body JSON là <code>{&quot;name&quot;: &quot;Charlie&quot;}</code>) để thêm user mới.</li>
+</ol>
+<!-- end list -->
+<pre tabindex="0"><code></code></pre></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/">Lập trình Back-end</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/node%2ejs/">Node.js</a><a class="tag" href="/tags/express/">Express</a><a class="tag" href="/tags/api/">API</a><a class="tag" href="/tags/back-end/">Back-end</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

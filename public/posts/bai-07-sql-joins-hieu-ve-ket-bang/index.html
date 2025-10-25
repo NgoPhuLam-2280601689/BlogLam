@@ -1,0 +1,568 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="en"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <title>
+    Ngô Phú Lâm
+        |
+        SQL JOINs: Nghệ thuật &#39;Ghép&#39; dữ liệu từ nhiều bảng
+      
+
+    
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.152.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Ngô Phú Lâm" />
+  <meta
+    name="description"
+    content="SQL JOIN là gì? Giải thích đơn giản và trực quan về INNER JOIN, LEFT JOIN, và tại sao nó là kỹ năng bắt buộc khi làm việc với cơ sở dữ liệu."
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.css" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.10cb17328b3207590ce3d89fb482e7cd6937d8138cef2059c69cabd65ab7d6c6.css"
+    integrity="sha256-EMsXMosyB1kM49iftILnzWk32BOM7yBZxpyr1lq31sY="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.7aa4d559d5fadcfed666b5679be54d0dbbcf6a0542742319765b253d2797cc44.css"
+    integrity="sha256-eqTVWdX63P7WZrVnm&#43;VNDbvPagVCdCMZdlslPSeXzEQ="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.a699c3ab02229020e2d51dfe6c9a4cc556fd7781edbc166e2af9d0db9d5c66ce.css"
+    integrity="sha256-ppnDqwIikCDi1R3&#43;bJpMxVb9d4HtvBZuKvnQ251cZs4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.1d88b60c86c4bb253fa4d4c085d27f7ee1f6eca544f7b50b227a2e63fbcfbaaa.css"
+    integrity="sha256-HYi2DIbEuyU/pNTAhdJ/fuH27KVE97ULInouY/vPuqo="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="SQL JOINs: Nghệ thuật &#39;Ghép&#39; dữ liệu từ nhiều bảng">
+  <meta name="twitter:description" content="SQL JOIN là gì? Giải thích đơn giản và trực quan về INNER JOIN, LEFT JOIN, và tại sao nó là kỹ năng bắt buộc khi làm việc với cơ sở dữ liệu.">
+
+
+
+  
+  <meta property="og:url" content="http://localhost:1313/posts/bai-07-sql-joins-hieu-ve-ket-bang/">
+  <meta property="og:site_name" content="Blog của Lâm">
+  <meta property="og:title" content="SQL JOINs: Nghệ thuật &#39;Ghép&#39; dữ liệu từ nhiều bảng">
+  <meta property="og:description" content="SQL JOIN là gì? Giải thích đơn giản và trực quan về INNER JOIN, LEFT JOIN, và tại sao nó là kỹ năng bắt buộc khi làm việc với cơ sở dữ liệu.">
+  <meta property="og:locale" content="vi_vn">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-20T10:30:00+07:00">
+    <meta property="article:modified_time" content="2025-10-20T10:30:00+07:00">
+    <meta property="article:tag" content="SQL">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Cơ Sở Dữ Liệu">
+    <meta property="article:tag" content="Data">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "posts",
+        "name": "SQL JOINs: Nghệ thuật \u0027Ghép\u0027 dữ liệu từ nhiều bảng",
+        "headline": "SQL JOINs: Nghệ thuật \u0027Ghép\u0027 dữ liệu từ nhiều bảng",
+        "alternativeHeadline": "",
+        "description": "
+      SQL JOIN là gì? Giải thích đơn giản và trực quan về INNER JOIN, LEFT JOIN, và tại sao nó là kỹ năng bắt buộc khi làm việc với cơ sở dữ liệu.
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "vi-vn",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/localhost:1313\/posts\/bai-07-sql-joins-hieu-ve-ket-bang\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "Ngô Phú Lâm"
+        },
+        "dateCreated": "2025-10-20T10:30:00.00Z",
+        "datePublished": "2025-10-20T10:30:00.00Z",
+        "dateModified": "2025-10-20T10:30:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "Ngô Phú Lâm",
+            "url": "http://localhost:1313/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "http:\/\/localhost:1313\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+      ]
+
+    ,
+        "url" : "http:\/\/localhost:1313\/posts\/bai-07-sql-joins-hieu-ve-ket-bang\/",
+        "wordCount" : "753",
+        "genre" : [ 
+      
+      "Cơ sở dữ liệu"
+
+    ],
+        "keywords" : [ 
+      
+      "SQL"
+
+    
+      
+        ,
+
+      
+      "Database"
+
+    
+      
+        ,
+
+      
+      "Cơ sở dữ liệu"
+
+    
+      
+        ,
+
+      
+      "Data"
+
+    ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/oke.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/"></a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>Sinh viên năm 4 chuyên ngành Công nghệ Thông tin. Lập trình viên với niềm đam mê về phát triển web và an ninh mạng. Luôn sẵn sàng học hỏi những công nghệ mới.</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/NgoPhuLam-2280601689"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fab fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://mail.google.com/mail/u/0/?pli=1#inbox"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Email"
+            title="Email"
+          >
+            <i class="fas fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/about/"
+              
+              title="Giới thiệu"
+              >Giới thiệu</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/posts/"
+              
+              title=""
+              >Bài Đăng</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>SQL JOINs: Nghệ Thuật &#39;Ghép&#39; Dữ Liệu Từ Nhiều Bảng</h1>
+      
+      <p>Một trong những sức mạnh lớn nhất của Cơ sở dữ liệu Quan hệ (Relational Database) là khả năng &ldquo;bình thường hóa&rdquo; (normalize) dữ liệu. Tức là, thay vì nhồi nhét mọi thứ vào một bảng khổng lồ, chúng ta chia nhỏ dữ liệu ra nhiều bảng logic để tránh lặp lại thông tin.</p>
+<p>Ví dụ, chúng ta không lưu tên người dùng trong bảng &ldquo;Đơn hàng&rdquo;. Chúng ta chỉ lưu <code>UserID</code> (một con số). Sau đó, chúng ta có một bảng &ldquo;Người dùng&rdquo; riêng chỉ để lưu thông tin người dùng.</p>
+<p>Nhưng khi cần xem báo cáo, chúng ta muốn biết &ldquo;Tên người dùng&rdquo; đã mua &ldquo;Tên sản phẩm&rdquo; nào. Làm thế nào để kết hợp dữ liệu từ hai bảng này?</p>
+<p>Câu trả lời chính là <code>JOIN</code>. <code>JOIN</code> là lệnh cho phép bạn &ldquo;ghép&rdquo; các hàng từ hai hoặc nhiều bảng lại với nhau, dựa trên một cột chung (gọi là &ldquo;khóa ngoại&rdquo; - foreign key).</p>
+<h3 id="chuẩn-bị-dữ-liệu-mẫu">Chuẩn bị &ldquo;Dữ liệu mẫu&rdquo;</h3>
+<p>Hãy tưởng tượng chúng ta có 2 bảng:</p>
+<p><strong>Bảng 1: <code>Users</code></strong> (Lưu danh sách người dùng)</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">UserID</th>
+          <th style="text-align: left">Name</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">1</td>
+          <td style="text-align: left">An Nguyễn</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">2</td>
+          <td style="text-align: left">Bình Trần</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">3</td>
+          <td style="text-align: left">Chi Lê</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Bảng 2: <code>Orders</code></strong> (Lưu danh sách đơn hàng đã đặt)</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">OrderID</th>
+          <th style="text-align: left">Product</th>
+          <th style="text-align: left">UserID</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">101</td>
+          <td style="text-align: left">Laptop</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">102</td>
+          <td style="text-align: left">Chuột</td>
+          <td style="text-align: left">1</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">103</td>
+          <td style="text-align: left">Bàn phím</td>
+          <td style="text-align: left">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">104</td>
+          <td style="text-align: left">Màn hình</td>
+          <td style="text-align: left">4</td>
+      </tr>
+  </tbody>
+</table>
+<p>Lưu ý: &ldquo;An&rdquo; (ID 1) và &ldquo;Bình&rdquo; (ID 2) đã mua hàng. &ldquo;Chi&rdquo; (ID 3) chưa mua gì. Và có một đơn hàng &ldquo;Màn hình&rdquo; (ID 104) được đặt bởi <code>UserID</code> 4, người không có trong bảng <code>Users</code> của chúng ta (có thể là khách vãng lai).</p>
+<p>Cột chung để liên kết 2 bảng này là <code>Users.UserID</code> và <code>Orders.UserID</code>.</p>
+<h3 id="1-inner-join-phần-giao">1. INNER JOIN (Phần giao)</h3>
+<p><code>INNER JOIN</code> (hoặc chỉ cần gõ <code>JOIN</code>) là loại JOIN phổ biến nhất. Nó chỉ trả về những hàng <strong>có sự trùng khớp ở cả hai bảng</strong>.</p>
+<p>Nói cách khác: &ldquo;Hãy cho tôi danh sách những <strong>người dùng đã đặt hàng</strong> VÀ <strong>đơn hàng đó thuộc về ai đó</strong>.&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> Users.Name, Orders.Product
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> Users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> Orders <span style="color:#66d9ef">ON</span> Users.UserID <span style="color:#f92672">=</span> Orders.UserID;
+</span></span></code></pre></div><p><strong>Kết quả sẽ là:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Product</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Bình Trần</td>
+          <td style="text-align: left">Laptop</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">An Nguyễn</td>
+          <td style="text-align: left">Chuột</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bình Trần</td>
+          <td style="text-align: left">Bàn phím</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Tại sao?</strong></p>
+<ul>
+<li>&ldquo;Chi Lê&rdquo; (ID 3) bị loại, vì cô ấy không có đơn hàng nào trong bảng <code>Orders</code>.</li>
+<li>Đơn hàng &ldquo;Màn hình&rdquo; (UserID 4) bị loại, vì <code>UserID</code> 4 không tồn tại trong bảng <code>Users</code>.</li>
+<li><code>INNER JOIN</code> chỉ lấy những gì &ldquo;khớp&rdquo; hoàn hảo: An (1) khớp với Chuột (1), Bình (2) khớp với Laptop (2) và Bàn phím (2).</li>
+</ul>
+<h3 id="2-left-join-lấy-tất-cả-bên-trái">2. LEFT JOIN (Lấy tất cả bên Trái)</h3>
+<p><code>LEFT JOIN</code> (hoặc <code>LEFT OUTER JOIN</code>) sẽ: Lấy <strong>TẤT CẢ</strong> các hàng từ bảng bên trái (bảng <code>Users</code>), và chỉ lấy những hàng <strong>khớp</strong> từ bảng bên phải (bảng <code>Orders</code>).</p>
+<p>Nói cách khác: &ldquo;Hãy cho tôi danh sách <strong>tất cả người dùng</strong>, kèm theo đơn hàng của họ <strong>nếu có</strong>. Nếu họ không có đơn hàng nào, cứ hiển thị tên họ và để trống phần đơn hàng.&rdquo;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> Users.Name, Orders.Product
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> Users
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> Orders <span style="color:#66d9ef">ON</span> Users.UserID <span style="color:#f92672">=</span> Orders.UserID;
+</span></span></code></pre></div><p><strong>Kết quả sẽ là:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Product</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">An Nguyễn</td>
+          <td style="text-align: left">Chuột</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bình Trần</td>
+          <td style="text-align: left">Laptop</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Bình Trần</td>
+          <td style="text-align: left">Bàn phím</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Chi Lê</strong></td>
+          <td style="text-align: left"><strong>NULL</strong></td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>Tại sao?</strong></p>
+<ul>
+<li>Bảng bên trái là <code>Users</code>, vì vậy nó lấy tất cả 3 người: An, Bình, Chi.</li>
+<li>An và Bình có đơn hàng, nên nó ghép vào như <code>INNER JOIN</code>.</li>
+<li>&ldquo;Chi Lê&rdquo; (ID 3) không có bản ghi nào khớp trong bảng <code>Orders</code>, vì vậy <code>LEFT JOIN</code> vẫn giữ lại &ldquo;Chi Lê&rdquo; và điền <code>NULL</code> (trống) vào cột <code>Product</code>.</li>
+<li>Đơn hàng &ldquo;Màn hình&rdquo; (UserID 4) vẫn bị loại, vì nó không khớp với bất kỳ ai trong bảng <code>Users</code> (bảng bên trái).</li>
+</ul>
+<h3 id="các-loại-join-khác-nâng-cao">Các loại JOIN khác (Nâng cao)</h3>
+<p>Ngoài 2 loại chính trên, còn có:</p>
+<ul>
+<li><strong>RIGHT JOIN:</strong> Ngược lại với <code>LEFT JOIN</code>. Lấy <strong>tất cả</strong> từ bảng bên phải (<code>Orders</code>) và chỉ lấy những gì khớp từ bảng bên trái (<code>Users</code>). (Nếu dùng ví dụ trên, nó sẽ lấy cả đơn hàng &ldquo;Màn hình&rdquo; và ghép với <code>NULL</code> ở cột <code>Name</code>).</li>
+<li><strong>FULL OUTER JOIN:</strong> Lấy <strong>TẤT CẢ</strong> từ cả hai bảng. Bất cứ hàng nào không khớp ở bảng đối diện sẽ được điền <code>NULL</code>. (Kết quả sẽ bao gồm cả &ldquo;Chi Lê - NULL&rdquo; và &ldquo;NULL - Màn hình&rdquo;).</li>
+</ul>
+<h3 id="kết-luận">Kết luận</h3>
+<p>Hiểu rõ các loại <code>JOIN</code> là kỹ năng cực kỳ quan trọng. <code>INNER JOIN</code> dùng để tìm các cặp dữ liệu khớp nhau (&ldquo;Ai đã mua hàng?&rdquo;), trong khi <code>LEFT JOIN</code> thường được dùng để tìm dữ liệu &ldquo;bị thiếu&rdquo; (&ldquo;Ai chưa mua hàng?&rdquo;).</p>
+<pre tabindex="0"><code></code></pre></div>
+    <div class="post__footer">
+      
+        <span><a class="category" href="/categories/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/">Cơ sở dữ liệu</a></span>
+
+
+      
+
+      
+        <span><a class="tag" href="/tags/sql/">SQL</a><a class="tag" href="/tags/database/">Database</a><a class="tag" href="/tags/c%C6%A1-s%E1%BB%9F-d%E1%BB%AF-li%E1%BB%87u/">Cơ sở dữ liệu</a><a class="tag" href="/tags/data/">Data</a></span>
+
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Ngô Phú Lâm
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

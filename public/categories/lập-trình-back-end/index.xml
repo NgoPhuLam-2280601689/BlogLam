@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lập Trình Back-End on Blog của Lâm</title>
+    <link>http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/</link>
+    <description>Recent content in Lập Trình Back-End on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Sat, 25 Oct 2025 14:30:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/categories/l%E1%BA%ADp-tr%C3%ACnh-back-end/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tạo API RESTful đơn giản với Node.js và Express</title>
+      <link>http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/</link>
+      <pubDate>Sat, 25 Oct 2025 14:30:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-02-tao-api-restful-voi-nodejs/</guid>
+      
+        <description>Hướng dẫn chi tiết cách xây dựng một API CRUD (Tạo, Đọc) cơ bản bằng Node.js và Express.js cho người mới bắt đầu.</description>
+      
+    </item>
+    
+    <item>
+      <title>REST API là gì? Viết API đầu tiên với Node.js và Express</title>
+      <link>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</link>
+      <pubDate>Sat, 18 Oct 2025 19:00:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-08-viet-api-voi-nodejs/</guid>
+      
+        <description>&lt;p&gt;Nếu bạn là sinh viên CNTT, chắc chắn bạn đã nghe cụm từ &amp;ldquo;API&amp;rdquo; ở khắp mọi nơi. Nhưng nó chính xác là gì? Và tại sao Node.js cùng Express lại là bộ đôi hoàn hảo để tạo ra nó?&lt;/p&gt;
+&lt;h3 id=&#34;api-là-gì-giải-thích-đơn-giản&#34;&gt;API là gì? (Giải thích đơn giản)&lt;/h3&gt;
+&lt;p&gt;Hãy tưởng tượng bạn đang ở trong một nhà hàng.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Bạn (Client) là &lt;strong&gt;người dùng&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Nhà bếp (Server) là &lt;strong&gt;máy chủ&lt;/strong&gt; chứa dữ liệu.&lt;/li&gt;
+&lt;li&gt;Cuốn menu (API) là &lt;strong&gt;API&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Bạn không thể tự ý xông vào bếp (server) để lấy đồ ăn (dữ liệu). Thay vào đó, bạn dùng &lt;strong&gt;cuốn menu (API)&lt;/strong&gt; để đưa ra một yêu cầu rõ ràng (ví dụ: &amp;ldquo;Cho tôi món Phở&amp;rdquo;). Người phục vụ sẽ nhận yêu cầu, đưa vào bếp, và mang món ăn (dữ liệu) ra cho bạn.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

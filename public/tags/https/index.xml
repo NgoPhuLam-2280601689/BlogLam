@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTTPS on Blog của Lâm</title>
+    <link>http://localhost:1313/tags/https/</link>
+    <description>Recent content in HTTPS on Blog của Lâm</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>vi-vn</language>
+    <lastBuildDate>Thu, 23 Oct 2025 11:15:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/tags/https/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tại sao có trang web là &#39;ổ khóa&#39;, có trang lại &#39;Không bảo mật&#39;?</title>
+      <link>http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/</link>
+      <pubDate>Thu, 23 Oct 2025 11:15:00 +0700</pubDate>
+      
+      <guid>http://localhost:1313/posts/bai-04-hieu-ve-http-va-https/</guid>
+      
+        <description>Giải thích đơn giản HTTP là gì, HTTPS là gì, và tại sao chữ &#39;S&#39; (Secure) lại là một trong những thứ quan trọng nhất trên Internet hiện đại.</description>
+      
+    </item>
+    
+  </channel>
+</rss>
