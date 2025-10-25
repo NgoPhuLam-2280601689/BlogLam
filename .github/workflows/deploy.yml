@@ -32,7 +32,6 @@ jobs:
           hugo-version: '0.152.2'
           extended: true
 
-      # Cài Dart Sass không cần sudo, thêm vào PATH của runner
       - name: Download and Install Dart Sass (Manual, No Sudo)
         run: |
           set -eux
@@ -43,7 +42,12 @@ jobs:
           cp /tmp/dart-sass/sass "$HOME/bin/sass"
           chmod +x "$HOME/bin/sass"
           echo "$HOME/bin" >> "$GITHUB_PATH"
+
+      - name: Verify Dart Sass
+        run: |
+          command -v sass
           sass --version
+
 
       # Quan trọng: đặt id để dùng outputs.base_url
       - name: Setup Pages
